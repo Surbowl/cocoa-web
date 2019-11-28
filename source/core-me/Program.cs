@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Hosting;
 using System.Security.Authentication;
 
-namespace SSI_website
+namespace CoreMe
 {
     public class Program
     {

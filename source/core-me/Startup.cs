@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CoreMe.Func;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -10,7 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace SSI_website
+namespace CoreMe
 {
     public class Startup
     {
@@ -31,8 +32,10 @@ namespace SSI_website
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            //获得Smtp发送Email的设置信息
+            services.AddOptions();
+            services.Configure<Email>(Configuration.GetSection("Email"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

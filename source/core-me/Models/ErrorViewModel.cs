@@ -1,6 +1,6 @@
 using System;
 
-namespace SSI_website.Models
+namespace CoreMe.Models
 {
     public class ErrorViewModel
     {

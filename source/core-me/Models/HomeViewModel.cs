@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace SSI_website.Models
+namespace CoreMe.Models
 {
     public class MessageViewModel
     {
