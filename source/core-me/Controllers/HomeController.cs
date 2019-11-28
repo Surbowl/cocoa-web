@@ -8,6 +8,15 @@ using CoreMe.Models;
 using Microsoft.Extensions.Options;
 using CoreMe.Func;
 
+/// <summary>
+/// 
+/// ASP.NET Core 2.1 MVC
+/// Microsoft Visual Studio Community 2019 v16.3.10
+/// Open Source on https://github.com/Surbowl/core-me
+/// by:Surbowl
+/// 
+/// </summary>
+
 namespace CoreMe.Controllers
 {
     public class HomeController : Controller
@@ -32,7 +41,7 @@ namespace CoreMe.Controllers
         {
             if (ModelState.IsValid)
             {
-                //将留言通过Smtp转发至Email
+                //将留言通过Smtp发送至Email
                 //邮件标题
                 string subject = "core-me打招呼_" + DateTime.Now.ToString("f");
                 //邮件正文
