@@ -59,13 +59,10 @@ namespace CoreMe.Controllers
                     state = state
                 });
             }
-            else
+            return Json(new
             {
-                return Json(new
-                {
-                    state = "invalid"
-                });
-            }
+                state = "invalid"
+            });
         }
 
         #endregion Index
