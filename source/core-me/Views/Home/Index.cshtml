@@ -1,0 +1,212 @@
+﻿@model SSI_website.Models.MessageViewModel;
+@{
+    ViewData["Title"] = "Hello!";
+}
+<environment include="Development">
+    <link href="~/css/home/index.css" rel="stylesheet" asp-append-version="true" />
+    @*按钮中的icon来自IcoMoon：https://icomoon.io/app/#/select*@
+    <link href="~/css/home/icomoon.css" rel="stylesheet" asp-append-version="true" />
+</environment>
+<environment exclude="Development">
+    <link href="~/css/home/index.min.css" rel="stylesheet" asp-append-version="true" />
+    <link href="~/css/home/icomoon.min.css" rel="stylesheet" asp-append-version="true" />
+</environment>
+<div id="downArrow" class="has-text-centered is-floating"><i class="fas fa-chevron-down is-size-3" onclick="toAbout()"></i></div>
+<nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" onclick="toHeader()"><img src="~/images/home/nav.png" height="40"></a>
+        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample"><span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span></a>
+    </div>
+    <div id="navbarBasicExample" class="navbar-menu no-overflow-x">
+        <div class="navbar-end" data-aos="fade-left" aos-once="true">
+            <a class="navbar-item has-underline" onclick="toAbout()">关于我</a>
+            <a class="navbar-item has-underline" onclick="toSkills()">技术</a>
+            <a class="navbar-item has-underline" onclick="toWorks()">项目</a>
+            <a class="navbar-item has-underline is-hidden-desktop" onclick="toContact()">打个招呼</a>
+            <a id="contactBtn_1" class="navbar-item has-underline is-hidden-touch" onclick="toContact()">打个招呼</a>
+            <a id="contactBtn_2" class="navbar-item is-hidden is-hidden-touch jump-in" onclick="toContact()">
+                <button class="button is-primary is-rounded"><span>Hello&nbsp;<span role="img" aria-label="emoji">👋</span></span></button>
+            </a>
+        </div>
+    </div>
+</nav>
+@*开始*@
+@*针对宽屏，desktop及以上*@
+<div class="columns is-full-screen is-hidden-mobile">
+    <div class="column is-half has-background-white">
+        <div class="header fade-jump-in">
+            <hr class="is-gap-line" />
+            <div class="is-float-text"><span class="has-text-grey-dark is-size-3">Hi&thinsp;<span id="face" role="img" aria-label="emoji">😃</span></span></div>
+            <div class="is-float-text"><span class="has-text-grey-darker is-size-2">我是CORE-ME</span></div>
+            <div class="is-float-text"><span class="has-text-grey-dark is-size-5">一名物联网学生</span></div>
+            <hr class="is-gap-line" />
+            <a class="button is-primary is-rounded is-medium" onclick="toContact()"><span>Hello&nbsp;<span role="img" aria-label="emoji">👋</span></span></a>
+        </div>
+    </div>
+</div>
+@*针对移动设备，mobile及以下*@
+<div class="is-full-screen is-hidden-tablet has-background-white">
+    <div class="header fade-jump-in has-text-centered">
+        <div><span class="has-text-grey-dark is-size-3">Aloha&thinsp;<span role="img" aria-label="emoji">😃</span></span></div>
+        <div><span class="has-text-grey-darker is-size-2">我是CORE-ME</span></div>
+        <div><span class="has-text-grey-dark is-size-5">一名物联网学生</span></div>
+    </div>
+</div>
+@*关于我*@
+<section id="_about" class="section">
+    <div class="columns is-centered">
+        <div class="column is-three-fifths has-text-centered" data-aos="fade-up" aos-once="true">
+            <div class="field"><span class="is-size-3 has-shadow-green">&nbsp;关于我&nbsp;</span><br /><br /></div>
+            <div class="field"><figure class="image is-128x128 is-inline-block"><img class="is-rounded" src="~/images/undefined.jpg"></figure><br /></div>
+            <div class="field"><p>Hi！我是CORE-ME<br />热爱编程、电子产品与音乐<span role="img" aria-label="emoji">😎</span></p></div>
+        </div>
+    </div>
+</section>
+@*技能*@
+<section id="_skills" class="section">
+    <div class="columns">
+        <div class="column is-4 is-offset-1 has-text-centered-mobile has-text-left-tablet" data-aos="fade-up" aos-once="true">
+            <div class="field"><span class="is-size-3 has-shadow-blue">&nbsp;技术&nbsp;</span></div>
+            <span>C#与Python是我偏爱的两门语言~</span>
+        </div>
+        <div class="column is-5 is-offset-1 no-overflow-x">
+            <div class="box has-text-centered" data-aos="zoom-in-left" aos-once="true">
+                <span class="is-size-2" role="img" aria-label="emoji">👨‍💻</span>
+                <hr class="is-gap-line" />
+                <div class="columns is-centered">
+                    <div class="column is-four-fifths">
+                        <hr class="is-gap-line" />
+                        <div class="field"><span class="is-size-5">语言</span></div>
+                        <div class="field">
+                            <div class="tags is-centered">
+                                <span class="tag">C#</span><span class="tag">C/C++</span><span class="tag">Python</span><span class="tag">Java</span><span class="tag">T-SQL</span>
+                                <span class="tag">PHP</span><span class="tag">HTML5</span><span class="tag">JS</span><span class="tag">CSS</span>
+                            </div>
+                        </div>
+                        <hr class="is-gap-line" />
+                        <div class="field"><span class="is-size-5">框架</span></div>
+                        <div class="field">
+                            <div class="tags is-centered">
+                                <span class="tag">.NET</span><span class="tag">ASP.NET MVC</span><span class="tag">BULMA</span>
+                            </div>
+                        </div>
+                        <hr class="is-gap-line" />
+                        <div class="field"><span class="is-size-5">工具</span></div>
+                        <div class="field">
+                            <div class="tags is-centered">
+                                <span class="tag">VS</span><span class="tag">VSCode</span><span class="tag">Dev-C++</span><span class="tag">Eclipse</span><span class="tag">AndroidStudio</span>
+                                <span class="tag">SSMS</span><span class="tag">Navicat</span><span class="tag">HBuilder</span><span class="tag">DW</span>
+                                <span class="tag">PS</span><span class="tag">GitHub</span>
+                            </div>
+                        </div>
+                        <hr class="is-gap-line" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+@*项目*@
+<section id="_works" class="section">
+    <div class="columns">
+        <div class="column is-2 is-offset-1 has-text-centered-mobile has-text-left-tablet" data-aos="fade-up" aos-once="true">
+            <div class="field"><span class="is-size-3 has-shadow-violet">&nbsp;项目&nbsp;</span></div>
+            <span>我的一些项目与课设作品<br />欢迎Dalao指教<span role="img" aria-label="emoji">🤗</span></span>
+        </div>
+        <div class="column">
+            <div class="columns no-overflow-x">
+                <div class="column" data-aos="zoom-in-left" aos-once="true">
+                    <div class="card">
+                        <div class="card-image"><figure class="image is-4by3"><img src="~/images/undefined.jpg" alt="MBXP-Fillet"></figure></div>
+                        <div class="card-content">
+                            <p class="title is-4">MBXP Fillet</p>
+                            <div class="content">
+                                <p>Matebook X Pro屏幕圆角小工具。基于.Net 4.6，利用悬浮窗体对屏幕顶角进行遮罩，鼠标可穿透，提高美观视效的同时不会影响操作。</p>
+                                <a href="https://github.com/Surbowl/MBXP-Fillet-Rounded-screen-tool/blob/master/README.md">下载</a>&emsp;|&emsp;<a href="https://github.com/Surbowl/MBXP-Fillet-Rounded-screen-tool">Open&nbsp;source</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column" data-aos="zoom-in-left" aos-once="true">
+                    <div class="card">
+                        <div class="card-image"><figure class="image is-4by3"><img src="~/images/undefined.jpg" alt="知客"></figure></div>
+                        <div class="card-content">
+                            <p class="title is-4">知客</p>
+                            <div class="content">
+                                <p>知客是一个可随心定制的新闻聚合网站。通过网络爬虫，它涵盖了众多主流媒体、政府部门和院校的新闻资讯，并且会聪明地分析用户的兴趣爱好，自动为用户推荐新闻资讯。</p>
+                                <span class="has-text-grey">课设作品</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column" data-aos="zoom-in-left" aos-once="true">
+                    <div class="card">
+                        <div class="card-image"><figure class="image is-4by3"><img src="~/images/undefined.jpg" alt="SRR"></figure></div>
+                        <div class="card-content">
+                            <p class="title is-4">SRR阅览室预约系统</p>
+                            <div class="content">
+                                <p>SRR阅览室预约系统是为了解决校内阅览室占座问题而开发的，分为用户端、管理员端、签到终端。系统根据用户所选的时间段，向其推荐座位，并帮助用户协调时间，减少座位资源的浪费。</p>
+                                <span class="has-text-grey">课设作品</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+@*打个招呼*@
+<section id="_contact" class="section">
+    <div class="columns is-centered">
+        <div class="column is-two-fifths has-text-centered">
+            <div class="field" data-aos="fade-up" aos-once="true"><span class="is-size-3 has-shadow-yellow">&nbsp;打个招呼！</span><br /><br /></div>
+            <form id="msg" asp-controller="Home" asp-action="Message" data-ajax="true" data-ajax-method="POST" data-ajax-begin="onBegin" data-ajax-complete="onComplete" data-ajax-failure="onFailed" data-ajax-success="onSuccess">
+                <div class="has-text-left" data-aos="fade-up" aos-once="true">
+                    @Html.AntiForgeryToken()
+                    <div class="field">
+                        @Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-item", @placeholder = "称呼", @required = "required" } })
+                        @Html.ValidationMessageFor(model => model.name, "", new { @class = "is-size-7 has-text-danger" })
+                    </div><div class="field">
+                        @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-item", @placeholder = "电子邮箱", @required = "required" } })
+                        @Html.ValidationMessageFor(model => model.email, "", new { @class = "is-size-7 has-text-danger" })
+                    </div><div class="field">
+                        @Html.EditorFor(model => model.phone, new { htmlAttributes = new { @class = "form-item", @placeholder = "联系电话（选填）" } })
+                        @Html.ValidationMessageFor(model => model.phone, "", new { @class = "is-size-7 has-text-danger" })
+                    </div><div class="field control">
+                        @Html.TextAreaFor(model => model.content, new { @class = "form-item", @placeholder = "消息内容...", @rows = 6, @required = "required" })
+                        @Html.ValidationMessageFor(model => model.content, "", new { @class = "is-size-7 has-text-danger" })
+                    </div>
+                </div><br /><div class="has-text-centered" data-aos="fade-up" aos-once="true">
+                    <button id="submitBtn" type="submit" class="button is-primary is-rounded is-medium"><span>发送&nbsp;<span role="img" aria-label="emoji">🚀</span></span></button>
+                </div>
+            </form>
+        </div>
+    </div><hr class="is-gap-line" /><div class="columns is-centered">
+        <div class="column is-three-fifths has-text-centered" data-aos="fade-up" aos-once="true">
+            <div class="field"><span class="is-size-5">社交网络</span></div>
+            <div class="field"><div class="buttons is-centered">
+                <a class="button is-weibo" href="https://weibo.com/5217319019/profile"><span class="icon"><span class="icon-weibo"></span></span><span>新浪微博</span></a>
+                <a class="button is-instagram" href="https://www.instagram.com/jie_wennn/"><span class="icon"><span class="icon-instagram"></span></span><span>Instagram</span></a>
+                <a class="button is-warning" onclick="jellow()"><span class="icon"><strong>J</strong></span><span>Jellow</span></a>
+                <a class="button is-twitter" href="https://twitter.com/srbowl"><span class="icon"><span class="icon-twitter"></span></span><span>Twitter</span></a>
+                <a class="button is-linkedin" href="https://www.linkedin.com/in/%E6%9D%B0%E6%96%87-%E8%94%A1-a6116b110/"><span class="icon"><span class="icon-linkedin"></span></span><span>Linkedin</span></a>
+                <a class="button is-black" href="https://github.com/Surbowl"><span class="icon"><span class="icon-github"></span></span><span>GitHub</span></a>
+            </div></div>
+        </div>
+    </div>
+</section>
+<hr class="is-gap-line" />
+@section Scripts{
+    <environment include="Development">
+        <script src="~/js/home/index.js" asp-append-version="true"></script>
+        <script src="~/lib/jquery-unobtrusive-ajax/jquery.unobtrusive-ajax.js"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/home/index.min.js" asp-append-version="true"></script>
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery.unobtrusive-ajax/3.2.5/jquery.unobtrusive-ajax.min.js"
+                asp-fallback-src="~/lib/jquery-unobtrusive-ajax/jquery.unobtrusive-ajax.min.js">
+        </script>
+    </environment>
+    @*表单验证使用的js库*@
+    <partial name="_ValidationScriptsPartial" />
+}

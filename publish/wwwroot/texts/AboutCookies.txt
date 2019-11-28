@@ -1,0 +1,13 @@
+﻿<br/><div class="columns is-centered"><div class="column has-text-left is-four-fifths">
+<strong class="is-size-7">本站如何使用Cookie</strong><br/>
+<span class="has-text-grey-dark is-size-7">
+为确保正常运转，本站有时会在计算机或移动设备上存储Cookie小数据文件。Cookie是一种网络服务器存储在计算机或移动设备上的纯文本文件。Cookie的内容只能由创建它的服务器检索或读取。每个Cookie对您的网络浏览器或移动应用程序都是唯一的。Cookie通常包含标识符、站点名称以及一些号码和字符。<br/>
+本站启用Cookie的目的与大多数网站或互联网服务提供商启用Cookie的目的一样，即改善用户体验。具体而言，有以下目的：<br/>
+a)&emsp;认证。在您访问时，本站会为您生成一个单独的ID，以标识您的身份。<br />b)&emsp;安全。本站使用Cookie保障网站运作安全。<br/>
+您可根据自己的偏好管理或删除Cookie。有关详情，请参见<a href="https://www.aboutcookies.org/">AboutCookies.org</a>。您可以清除计算机上保存的所有Cookie，大部分网络浏览器都设有阻止Cookie的功能。如需详细了解如何更改浏览器设置，请访问以下链接：<br/>
+<a href="https://support.microsoft.com/en-us/help/260971/description-of-cookies">Internet Explorer</a><br/>
+<a href="https://support.google.com/chrome/answer/95647?hl=en-GB&amp;p=cpn_cookies">Google Chrome</a><br/>
+<a href="https://support.mozilla.org/en-US/kb/cookies-information-websites-store-on-your-computer?redirectlocale=en-US&amp;redirectslug=Cookies">Mozilla Firefox</a><br/>
+<a href="https://support.apple.com/kb/PH5042?locale=en_US">Safari</a><br/>
+<a href="https://www.opera.com/o/ie-simple">Opera</a><br/>
+</span></div><div>

@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] core-me</title>
+    <environment include="Development">
+        @*Bulma.css框架，Document：https://bulma.io/documentation/*@
+        <link rel="stylesheet" href="~/css/bulma.css" />
+        <link rel="stylesheet" href="~/css/public.css" asp-append-version="true" />
+        @*aos入场动画，Document：https://michalsnik.github.io/aos/*@
+        <link rel="stylesheet" href="~/css/aos.css" />
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet"
+              href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"
+              asp-fallback-href="~/css/bulma.min.css" />
+        <link rel="stylesheet" href="~/css/public.min.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/aos.css" />
+    </environment>
+</head>
+<body>
+    @RenderBody()
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+                Made&nbsp;with&nbsp;☕&thinsp;&amp;&thinsp;❤️
+                <br />Using&nbsp;<a class=has-text-black href="https://bulma.io"><u>Bulma</u></a>&thinsp;&amp;&thinsp;<a class=has-text-black href=https://fontawesome.com><u>Fontawesome</u></a>
+                <br />Photo&nbsp;by&nbsp;<a class=has-text-black href="https://unsplash.com/powwpic"><u>Ines&nbsp;Álvarez&nbsp;Fdez</u></a>
+                <br />Source&nbsp;code&nbsp;on&nbsp;<a class=has-text-black href="https://github.com/Surbowl/core-me"><u>Github</u></a>
+                <br /><a class="has-text-grey-dark is-size-7" onclick="aboutCookies()">本站如何使用Cookie？</a>&emsp;<a class="has-text-grey-dark is-size-7" href="http://www.miitbeian.gov.cn/">闽ICP备xxxxxxx号-x</a>
+            </p>
+            @*《本站如何使用Cookie》html文件插入点*@
+            <div id="aboutCookies"></div>
+        </div>
+    </footer>
+    <environment include="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/jquery-scrollTo/jquery.scrollTo.js"></script>
+        <script src="~/lib/jquery-aos/aos.js"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery"
+                crossorigin="anonymous"
+                integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT">
+        </script>
+        <script src="~/lib/jquery-aos/aos.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.2/jquery.scrollTo.min.js"
+                asp-fallback-src="~/lib/jquery-scrollTo/jquery.scrollTo.min.js">
+        </script>
+    </environment>
+    @RenderSection("Scripts", required: false)
+    <script>
+        @*启动aos，Document：https://michalsnik.github.io/aos/*@
+        AOS.init();
+        @*插入《本站如何使用Cookie》html*@
+        var ac=true;
+        function aboutCookies(){
+            if (ac){
+                $.ajax({
+                    url:'/texts/AboutCookies.txt',
+                    dataType:'text',
+                    success:function(data){
+                        ac=false;
+                        $('#aboutCookies').html(data);
+                        $.scrollTo('#aboutCookies',800);}});}}
+    </script>
+</body>
+</html>
