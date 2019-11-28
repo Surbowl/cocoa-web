@@ -12,6 +12,8 @@ namespace SSI_website.Controllers
 {
     public class HomeController : Controller
     {
+        #region Index
+
         public IActionResult Index()
         {
             return View();
@@ -76,6 +78,8 @@ namespace SSI_website.Controllers
             }
             return false;
         }
+
+        #endregion Index
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
