@@ -33,8 +33,8 @@ Core-me is a lovely personal website, you can use it to develop your own social 
 <br>
 - 确保您的计算机支持 ASP.NET Core 2.1 或更高版本
 - 将 core-me 项目发布到文件夹
-- 通过cmd访问发布项目的文件夹
-- 使用dotnet指令启动core-me.dll文件
+- 在 cmd 命令行访问发布项目的文件夹
+- 输入 dotnet 指令启动 core-me.dll 文件
 ```
 #请将此路径替换成您自己的
 cd C:\core-me\publish
