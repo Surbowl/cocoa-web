@@ -12,7 +12,11 @@ core-me 是一个敲可爱的个人小网站，拥有简洁的界面与丰富的
 - CSS
 - JS
 - [Bulma](https://github.com/jgthms/bulma)
-- [ASP.NET Core 2.1 MVC](https://github.com/aspnet/AspNetCore)
+- [ASP.NET Core MVC](https://github.com/aspnet/AspNetCore)
+<br><br>
+## 环境
+- ASP.NET Core 2.1
+- Microsoft Visual Studio Community 2019 v16.3.10
 <br><br>
 ## 部署前的配置
 ### 将留言通过 Smtp 转发至您的 Email
