@@ -15,8 +15,8 @@ core-me 是一个敲可爱的个人小网站，拥有简洁的界面与丰富的
 - [ASP.NET Core 2.1 MVC](https://github.com/aspnet/AspNetCore)
 <br><br>
 ## 部署前的配置
-### 将留言通过 Smtp 转发至 Email
-请访问项目根目录下的 appsettings.json 与 appsettings.Development.json 文件，按照注释补全您的 Email 设置。
+### 将留言通过 Smtp 转发至您的 Email
+请访问项目根目录下的 appsettings.json 与 appsettings.Development.json 文件，按照注释补全您的 Email Smtp 信息。
 <br><br>
 请注意，appsettings.json 是正式部署时采用的设置，而 appsettings.Development.json 是localhost调试时采用的设置，通常他们的 Email 设置保持一致即可。如果您在调试时有特殊需求，则可以利用这一特性。
 <br><br>
