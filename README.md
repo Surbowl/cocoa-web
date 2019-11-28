@@ -36,7 +36,7 @@ Core-me is a lovely personal website, you can use it to develop your own social 
 - 在 cmd 命令行访问发布项目的文件夹
 - 输入 dotnet 指令启动 core-me.dll 文件
 ```
-#请将此路径替换成您自己的
+# 请将此路径替换成您自己的
 cd C:\core-me\publish
 
 dotnet core-me.dll
