@@ -29,7 +29,7 @@ Core-me is a lovely personal website, you can use it to develop your own social 
 ### 使用 Kestrel 部署项目
 您可以使用 Kestrel 直接部署项目，Kestrel 是一个跨平台的适用于 ASP.NET Core 的 Web 服务器，已经包含在项目模板中。
 <br><br>
-__下面是在 Windows 平台部署项目的入门教程：__
+下面是在 Windows 平台部署项目的入门教程：
 <br>
 - 确保您的计算机支持 ASP.NET Core 2.1 或更高版本
 - 将 core-me 项目发布到文件夹
@@ -38,6 +38,7 @@ __下面是在 Windows 平台部署项目的入门教程：__
 ```
 #请将此路径替换成您自己的
 cd C:\core-me\publish
+
 dotnet core-me.dll
 ```
 现在，core-me地成功运行在您的计算机上了，您可访问 [http://localhost:80](http://localhost:80) 查看它！
