@@ -41,7 +41,7 @@ cd C:\core-me\publish
 
 dotnet core-me.dll
 ```
-现在，core-me地成功运行在您的计算机上了，您可访问 [http://localhost:80](http://localhost:80) 查看它！
+现在，core-me成功地运行在您的计算机上了，您可访问 [http://localhost:80](http://localhost:80) 查看它！
 <br><br>
 如需启用 Https，可访问项目根目录下的 appsettings.json 与 Program.cs 文件，文件中已为您编写好了相应代码，只需根据注释进行修改即可。
 <br><br>
