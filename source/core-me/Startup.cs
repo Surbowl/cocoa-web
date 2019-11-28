@@ -33,7 +33,7 @@ namespace CoreMe
             });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            //获得Smtp发送Email的设置信息
+            //获得Smtp发送Email的配置信息
             services.AddOptions();
             services.Configure<Email>(Configuration.GetSection("Email"));
         }

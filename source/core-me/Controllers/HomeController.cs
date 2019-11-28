@@ -47,7 +47,7 @@ namespace CoreMe.Controllers
                 //邮件正文
                 string body = $"来自：{model.name}\nEmail：{model.email}\n联系电话：{model.phone}\n\n{model.content}";
                 //发送
-                Task<bool> sendEMailTask = Task.Run(() => this.myEmail.SendEMail(subject, body));
+                Task<bool> sendEMailTask = Task.Run(() => this.myEmail.Send(subject, body));
                 //Debug.WriteLine(model.name);
                 //Debug.WriteLine(model.email);
                 //Debug.WriteLine(model.phone);

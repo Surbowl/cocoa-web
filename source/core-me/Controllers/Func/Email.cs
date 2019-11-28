@@ -23,7 +23,7 @@ namespace CoreMe.Func
         /// <param name="subject">Email标题</param>
         /// <param name="body">Email正文</param>
         /// <returns>发送成功？</returns>
-        public bool SendEMail(string subject, string body)
+        public bool Send(string subject, string body)
         {
             try
             {
