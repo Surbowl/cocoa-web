@@ -2,7 +2,8 @@
 
 core-me 是一个敲可爱的自我介绍网站，带有留言功能。
 
-[示例网站](https://surbowl.online)
+戳这里查看👉 [示例网站](https://surbowl.online)
+
 
 ## 语言&框架 👨‍💻
 - C#
@@ -11,6 +12,7 @@ core-me 是一个敲可爱的自我介绍网站，带有留言功能。
 - JS
 - [Bulma](https://github.com/jgthms/bulma)
 - [ASP.NET Core 2.1 MVC](https://github.com/aspnet/AspNetCore)
+
 
 ## 部署前的配置 🔧
 
