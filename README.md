@@ -24,7 +24,3 @@ core-me 是一个敲可爱的个人小网站，拥有简洁的界面与丰富的
 如果您想使用 Kestrel 直接部署项目，并且启用 Https，可访问项目根目录下的 appsettings.json 与 Program.cs 文件，项目中已为您编写好了相应代码，只需根据注释进行修改即可。
 <br><br>
 Kestrel 是一个跨平台的适用于 ASP.NET Core 的 Web 服务器，已经包含在项目模板中。您可访问微软提供的[文档](https://docs.microsoft.com/zh-cn/aspnet/core/host-and-deploy/?view=aspnetcore-3.0)查看更多帮助。
-<br><br>
-## 联系我
-surbowl@gmail.com
-https://surbowl.online
