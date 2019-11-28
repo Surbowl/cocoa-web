@@ -27,15 +27,21 @@ Core-me is a lovely personal website, you can use it to develop your own social 
 请注意，appsettings.json 是正式部署时采用的设置，而 appsettings.Development.json 是 localhost 调试时采用的设置，通常他们的 Email 设置保持一致即可。如果您在调试时有特殊需求，则可以利用这一特性。
 <br><br>
 ### 使用 Kestrel 部署项目
-您可以使用 Kestrel 直接部署项目。生成-发布 core-me 项目后，在发布的文件夹中通过命令行使用dotnet指令：
+您可以使用 Kestrel 直接部署项目，Kestrel 是一个跨平台的适用于 ASP.NET Core 的 Web 服务器，已经包含在项目模板中。
+<br><br>
+__下面是在 Windows 平台部署项目的入门教程：__
 <br>
+- 确保您的计算机支持 ASP.NET Core 2.1 或更高版本
+- 将 core-me 项目发布到文件夹
+- 通过cmd访问发布项目的文件夹
+- 使用dotnet指令启动core-me.dll文件
 ```
+#请将此路径替换成您自己的
+cd C:\core-me\publish
 dotnet core-me.dll
 ```
-现在，core-me地成功运行在您的计算机上了，访问 [http://localhost:80](http://localhost:80) 查看它！
+现在，core-me地成功运行在您的计算机上了，您可访问 [http://localhost:80](http://localhost:80) 查看它！
 <br><br>
 如需启用 Https，可访问项目根目录下的 appsettings.json 与 Program.cs 文件，文件中已为您编写好了相应代码，只需根据注释进行修改即可。
-<br><br>
-Kestrel 是一个跨平台的适用于 ASP.NET Core 的 Web 服务器，已经包含在项目模板中。
 <br><br>
 您可访问微软提供的[文档](https://docs.microsoft.com/zh-cn/aspnet/core/host-and-deploy/?view=aspnetcore-3.0)查看更多部署方式。
