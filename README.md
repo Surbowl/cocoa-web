@@ -32,8 +32,7 @@ Core-me is a lovely personal website, you can use it to develop your own social 
 ```
 dotnet core-me.dll
 ```
-<br>
-现在，core-me成功运行在您的计算机上了，访问[http://localhost:80/](http://localhost:80/)查看它！
+现在，core-me地成功运行在您的计算机上了，访问 [http://localhost:80](http://localhost:80) 查看它！
 <br><br>
 如需启用 Https，可访问项目根目录下的 appsettings.json 与 Program.cs 文件，文件中已为您编写好了相应代码，只需根据注释进行修改即可。
 <br><br>
