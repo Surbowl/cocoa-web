@@ -18,7 +18,7 @@ core-me 是一个敲可爱的个人小网站，拥有简洁的界面与丰富的
 - ASP.NET Core 2.1
 - Microsoft Visual Studio Community 2019 v16.3.10
 <br><br>
-## 部署前的配置
+## 部署
 ### 将留言通过 Smtp 转发至您的 Email
 请访问项目根目录下的 appsettings.json 与 appsettings.Development.json 文件，按照注释补全您的 Email Smtp 信息。
 <br><br>
