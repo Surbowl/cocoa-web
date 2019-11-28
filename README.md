@@ -8,7 +8,7 @@ Core-me is a lovely personal website, you can use it to develop your own social 
 <br><br>
 👉 [Demo](https://surbowl.online)
 <br><br>
-## 语言&框架 👨‍💻
+## 语言&框架
 - C#
 - HTML
 - CSS
@@ -16,11 +16,11 @@ Core-me is a lovely personal website, you can use it to develop your own social 
 - [Bulma](https://github.com/jgthms/bulma)
 - [ASP.NET Core MVC](https://github.com/aspnet/AspNetCore)
 <br><br>
-## 环境 🚌
+## 环境
 - ASP.NET Core 2.1
 - Microsoft Visual Studio Community 2019 v16.3.10
 <br><br>
-## 部署 🚀
+## 部署
 ### 将留言通过 Smtp 转发至您的 Email
 请访问项目根目录下的 appsettings.json 与 appsettings.Development.json 文件，按照注释补全您的 Email Smtp 信息。
 <br><br>
