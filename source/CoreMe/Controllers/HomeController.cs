@@ -41,14 +41,14 @@ namespace CoreMe.Controllers
         /// 返回用户ip
         /// </summary>
         /// <returns></returns>
-        [Route("Api/MyIpAddress")]
-        public JsonResult MyIpAddress()
-        {
-            return Json(new
-            {
-                ip = this._accessor.HttpContext.Connection.RemoteIpAddress.ToString()
-            });
-        }
+        //[Route("Api/MyIpAddress")]
+        //public JsonResult MyIpAddress()
+        //{
+        //    return Json(new
+        //    {
+        //        ip = this._accessor.HttpContext.Connection.RemoteIpAddress.ToString()
+        //    });
+        //}
 
         #region Index
 
