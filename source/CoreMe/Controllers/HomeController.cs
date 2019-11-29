@@ -37,19 +37,6 @@ namespace CoreMe.Controllers
             this._cache = cache;
         }
 
-        /// <summary>
-        /// 返回用户ip
-        /// </summary>
-        /// <returns></returns>
-        //[Route("Api/MyIpAddress")]
-        //public JsonResult MyIpAddress()
-        //{
-        //    return Json(new
-        //    {
-        //        ip = this._accessor.HttpContext.Connection.RemoteIpAddress.ToString()
-        //    });
-        //}
-
         #region Index
 
         public IActionResult Index()
