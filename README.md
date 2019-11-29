@@ -19,7 +19,7 @@ Core-me is a lovely personal website, you can use it to develop your own social 
 <br><br>
 ## 环境
 - ASP.NET Core 2.1
-- Redis win-3.2 （参考）
+- [Redis win-3.2](https://github.com/microsoftarchive/redis/releases) （参考）
 <br><br>
 ## 部署
 ### 将留言通过 Smtp 转发至您的 Email
