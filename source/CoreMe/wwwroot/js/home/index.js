@@ -83,6 +83,11 @@ function toContact() {
     inactiveNav();
 }
 
+/*
+ * form post后的行为
+ * Document：https://dotnetthoughts.net/jquery-unobtrusive-ajax-helpers-in-aspnet-core/
+*/
+
 //form submit按钮
 var submitBtn;
 function onBegin() {
@@ -92,17 +97,25 @@ function onBegin() {
     submitBtn.addClass('is-loading');
 }
 
-/*
- * form post后的行为
- * Document：https://dotnetthoughts.net/jquery-unobtrusive-ajax-helpers-in-aspnet-core/
-*/
 function onComplete(result) {
     var state = result.responseJSON.state;
     switch (state) {
-        case "succeed": $("#content").val(''); alert('消息发送成功！\n(oﾟvﾟ)ノ'); break;
-        case "invalid": alert('很抱歉，您输入的信息似乎有误，请修改后再试一试吧。'); break;
-        case "faild": alert('很抱歉，遇到了一些问题，请稍后重试。\n (T_T)'); break;
+        case "succeed":
+            $("#content").val('');
+            alert('消息发送成功！\n(oﾟvﾟ)ノ');
+            break;
+        case "invalid":
+            alert('很抱歉，您输入的信息似乎有误，请修改后再试一试吧。');
+            break;
+        case "faild":
+            alert('很抱歉，遇到了一些问题，请稍后重试。\n (T_T)');
+            break;
+        case "wait":
+            alert('小火箭正在补充燃料，请稍后再试。\n (ง •_•)ง');
+            break;
     };
+    submitBtn.removeClass('is-loading');
+    countDown(result.responseJSON.timeo);
 }
 
 function onFailure() {
@@ -111,16 +124,11 @@ function onFailure() {
     countDown(3);
 }
 
-function onSuccess() {
-    submitBtn.removeClass('is-loading');
-    countDown(20);
-}
-
 //submit按钮显示倒计时
 function countDown(timeo) {
     var $submitBtn = $('#submitBtn');
     $submitBtn.addClass('is-static');
-    $submitBtn.text("&emsp;" + timeo + "s&emsp;");
+    $submitBtn.html("&emsp;" + timeo + "s&emsp;");
     var timeStop = setInterval(function () {
         timeo--;
         if (timeo > 0) {

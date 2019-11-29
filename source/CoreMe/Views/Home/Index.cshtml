@@ -160,7 +160,7 @@
     <div class="columns is-centered">
         <div class="column is-two-fifths has-text-centered">
             <div class="field" data-aos="fade-up" aos-once="true"><span class="is-size-3 has-shadow-yellow">&nbsp;打个招呼！</span><br /><br /></div>
-            <form id="msg" asp-controller="Home" asp-action="Message" data-ajax="true" data-ajax-method="POST" data-ajax-begin="onBegin" data-ajax-complete="onComplete" data-ajax-failure="onFailed" data-ajax-success="onSuccess">
+            <form id="msg" asp-controller="Api" asp-action="Message" data-ajax="true" data-ajax-method="POST" data-ajax-begin="onBegin" data-ajax-complete="onComplete" data-ajax-failure="onFailed">
                 <div class="has-text-left" data-aos="fade-up" aos-once="true">
                     @Html.AntiForgeryToken()
                     <div class="field">
