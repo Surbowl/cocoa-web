@@ -108,6 +108,7 @@ function onComplete(result) {
             alert('很抱歉，您输入的信息似乎有误，请修改后再试一试吧。');
             break;
         case "faild":
+        case "error":
             alert('很抱歉，遇到了一些问题，请稍后重试。\n (T_T)');
             break;
         case "wait":
