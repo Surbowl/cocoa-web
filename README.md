@@ -7,7 +7,7 @@ core-me 是一个敲可爱的个人网站，拥有简洁的界面与丰富的动
 <br><br>
 Core-me is a lovely personal website, you can use it to develop your own social or resume site.
 <br><br>
-👉 [Demo](https://surbowl.online)
+👉 [查看 Demo](https://surbowl.online)
 <br><br>
 ## 语言&框架
 - C#
