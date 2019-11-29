@@ -37,9 +37,9 @@ Core-me is a lovely personal website, you can use it to develop your own social 
 - 输入 dotnet 指令启动 core-me.dll 文件
 ``` bash
 # 请将此路径替换成您自己的
-cd C:\core-me\publish
+cd C:\CoreMe\publish
 
-dotnet core-me.dll
+dotnet CoreMe.dll
 ```
 现在，core-me成功地运行在您的计算机上了，您可访问 [http://localhost:80](http://localhost:80) 查看它！
 <br>
