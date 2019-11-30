@@ -46,3 +46,6 @@ dotnet CoreMe.dll
 如需启用 Https，可访问项目根目录下的 appsettings.json 与 Program.cs 文件，文件中已为您编写好了相应代码，只需根据注释进行修改即可。
 <br><br>
 您可访问微软提供的[文档](https://docs.microsoft.com/zh-cn/aspnet/core/host-and-deploy/?view=aspnetcore-3.0)查看更多部署方式。
+<br><br>
+## 开源协议
+Code released under [the MIT license](https://github.com/Surbowl/core-me/blob/master/LICENSE).
