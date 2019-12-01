@@ -60,7 +60,7 @@ namespace CoreMe.Controllers
                 if (ModelState.IsValid)
                 {
                     //获取用户ip（ipv4 or ipv6）
-                    string userIpAddress = _accessor.HttpContext.Connection.RemoteIpAddress.ToString();
+                    string userIpAddress = _accessor.HttpContext.Connection.RemoteIpAddress.ToString() ?? "::0";
                     //访问Redis，根据用户ip判断用户是否在20秒内发表过了留言
                     //Redis中的键值对为  UserIpAddress : DateTime
                     var value = await _cache.GetAsync(userIpAddress);
