@@ -10,6 +10,7 @@ using CoreMe.Func;
 using Microsoft.Extensions.Caching.Distributed;
 using System.Text;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Logging;
 
 /// <summary>
 /// 
@@ -24,12 +25,15 @@ namespace CoreMe.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly ILogger<HomeController> _logger;
         private readonly IHttpContextAccessor _accessor;
         private readonly Email _email;
         private readonly IDistributedCache _cache;
 
-        public HomeController(IHttpContextAccessor accessor, IOptions<Email> email, IDistributedCache cache)
+        public HomeController(ILogger<HomeController> logger, IHttpContextAccessor accessor, IOptions<Email> email, IDistributedCache cache)
         {
+            //日志接口
+            this._logger = logger;
             this._accessor = accessor;
             //获取Smtp发送Email的类
             this._email = email.Value;
@@ -101,6 +105,7 @@ namespace CoreMe.Controllers
                     else
                     {
                         //发送失败
+                        this._logger.LogInformation("[Message Log] 有一封Email发送失败。");
                         return Json(new
                         {
                             state = "faild",
@@ -117,7 +122,7 @@ namespace CoreMe.Controllers
             }
             catch
             {
-
+                this._logger.LogError("[Message Log] Message API 产生异常，可能是 Redis 未启动。");
             }
             return Json(new
             {
