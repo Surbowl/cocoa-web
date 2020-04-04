@@ -30,12 +30,12 @@ namespace CoreMe.Controllers
         public HomeController(ILogger<HomeController> logger, IHttpContextAccessor accessor, IOptions<EmailOptions> emailOptions, IDistributedCache cache)
         {
             //日志接口
-            _logger = logger;
-            _accessor = accessor;
+            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+            _accessor = accessor ?? throw new ArgumentNullException(nameof(accessor));
             //获取Smtp发送Email的类
-            _email = new Email(emailOptions.Value);
+            _email = new Email(emailOptions.Value ?? throw new ArgumentNullException(nameof(emailOptions)));
             //Redis缓存实现
-            _cache = cache;
+            _cache = cache ?? throw new ArgumentNullException(nameof(cache));
         }
 
         public IActionResult Index()
