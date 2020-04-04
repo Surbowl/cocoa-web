@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using CoreMe.Models;
-using Microsoft.Extensions.Options;
-using CoreMe.Func;
-using Microsoft.Extensions.Caching.Distributed;
-using System.Text;
+﻿using CoreMe.Models;
+using CoreMe.Services;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Caching.Distributed;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
+using System;
+using System.Diagnostics;
+using System.Threading.Tasks;
 
 /// <summary>
 /// 
@@ -30,18 +27,16 @@ namespace CoreMe.Controllers
         private readonly Email _email;
         private readonly IDistributedCache _cache;
 
-        public HomeController(ILogger<HomeController> logger, IHttpContextAccessor accessor, IOptions<Email> email, IDistributedCache cache)
+        public HomeController(ILogger<HomeController> logger, IHttpContextAccessor accessor, IOptions<EmailOptions> emailOptions, IDistributedCache cache)
         {
             //日志接口
-            this._logger = logger;
-            this._accessor = accessor;
+            _logger = logger;
+            _accessor = accessor;
             //获取Smtp发送Email的类
-            this._email = email.Value;
+            _email = new Email(emailOptions.Value);
             //Redis缓存实现
-            this._cache = cache;
+            _cache = cache;
         }
-
-        #region Index
 
         public IActionResult Index()
         {
@@ -56,7 +51,7 @@ namespace CoreMe.Controllers
         /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Route("Api/Message")]
+        [Route("api/message")]
         public async Task<JsonResult> Message(MessageViewModel model)
         {
             try
@@ -130,8 +125,6 @@ namespace CoreMe.Controllers
                 timeo = 5
             });
         }
-
-        #endregion Index
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

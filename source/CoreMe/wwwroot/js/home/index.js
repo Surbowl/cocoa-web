@@ -1,4 +1,9 @@
-﻿//半屏高度
+﻿
+//请注意，生产环境使用的是index.min.js压缩文件
+//您可以安装Bundler & Minifier插件，使压缩文件跟随该文件自动更新
+//https://marketplace.visualstudio.com/items?itemName=MadsKristensen.BundlerMinifier
+
+//半屏高度
 var halfScreen = window.screen.height / 2;
 //获取对象
 var navbarBurger = $('.navbar-burger');
@@ -145,5 +150,5 @@ function countDown(timeo) {
 
 //杂项
 function jellow() {
-    alert('Jellow ID: Surbowl /n欢迎来Jellow找我玩儿！');
+    alert('Jellow ID: Surbowl \n欢迎来Jellow找我玩儿！');
 }
