@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <None Include="bundleconfig.json" />
+    <None Include="wwwroot\css\home\fonts\icomoon.svg" />
     <None Include="wwwroot\lib\jquery-unobtrusive-ajax\jquery.unobtrusive-ajax.js" />
     <None Include="wwwroot\lib\jquery-unobtrusive-ajax\jquery.unobtrusive-ajax.min.js" />
   </ItemGroup>

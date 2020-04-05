@@ -5,13 +5,13 @@
 <environment include="Development">
     <link href="~/css/home/index.css" rel="stylesheet" asp-append-version="true" />
     @*按钮中的icon来自IcoMoon：https://icomoon.io/app/#/select*@
-    <link href="~/css/home/icomoon.css" rel="stylesheet" asp-append-version="true" />
+    <link href="~/css/home/icomoon.min.css" rel="stylesheet" asp-append-version="true" />
 </environment>
 <environment exclude="Development">
     <link href="~/css/home/index.min.css" rel="stylesheet" asp-append-version="true" />
     <link href="~/css/home/icomoon.min.css" rel="stylesheet" asp-append-version="true" />
 </environment>
-<div id="downArrow" class="has-text-centered is-floating"><i class="fas fa-chevron-down is-size-3" onclick="toAbout()"></i></div>
+<div id="downArrow" class="has-text-centered is-size-5 is-floating"><span class="icon-chevron-down" onclick="toAbout()"></span></div>
 <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
         <a class="navbar-item" onclick="toHeader()"><img src="~/images/home/nav.png" height="40"></a>

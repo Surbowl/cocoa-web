@@ -23,11 +23,11 @@
     @RenderBody()
     <footer class="footer">
         <div class="content has-text-centered">
-            <p>
+            <p id="footerInfo">
                 Made&nbsp;with&nbsp;☕&thinsp;&amp;&thinsp;❤️
-                <br />Using&nbsp;<a class=has-text-black href="https://bulma.io"><u>Bulma</u></a>&thinsp;&amp;&thinsp;<a class=has-text-black href=https://fontawesome.com><u>Fontawesome</u></a>
-                <br />Photo&nbsp;by&nbsp;<a class=has-text-black href="https://unsplash.com/powwpic"><u>Ines&nbsp;Álvarez&nbsp;Fdez</u></a>
-                <br />Source&nbsp;code&nbsp;on&nbsp;<a class=has-text-black href="https://github.com/Surbowl/core-me"><u>Github</u></a>
+                <br />Using&nbsp;<a class=has-text-black href="https://bulma.io" target="_blank"><u>Bulma</u></a>&thinsp;&amp;&thinsp;<a class=has-text-black href="https://fontawesome.com" target="_blank"><u>Fontawesome</u></a>
+                <br />Photo&nbsp;by&nbsp;<a class=has-text-black href="https://unsplash.com/powwpic" target="_blank"><u>Ines&nbsp;Álvarez&nbsp;Fdez</u></a>
+                <br />Source&nbsp;code&nbsp;on&nbsp;<a class=has-text-black href="https://github.com/Surbowl/core-me" target="_blank"><u>Github</u></a>
                 <br /><a class="has-text-grey-dark is-size-7" onclick="aboutCookies()">本站如何使用Cookie？</a>
                 @*《本站如何使用Cookie》html文件插入点*@
                 <label id="aboutCookies"></label>
@@ -36,7 +36,9 @@
         </div>
     </footer>
     <environment include="Development">
-        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js">
+        </script>
         <script src="~/lib/jquery-scrollTo/jquery.scrollTo.js"></script>
         <script src="~/lib/jquery-aos/aos.js"></script>
     </environment>
@@ -66,7 +68,7 @@
                     success:function(data){
                         ac=false;
                         $('#aboutCookies').html(data);
-                        $.scrollTo('#aboutCookies',800);}});}}
+                        $.scrollTo('#footerInfo',800);}});}}
     </script>
 </body>
 </html>

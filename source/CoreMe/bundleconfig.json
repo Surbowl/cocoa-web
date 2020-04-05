@@ -10,5 +10,11 @@
     "inputFiles": [
       "wwwroot/js/home/index.js"
     ]
+  },
+  {
+    "outputFileName": "wwwroot/css/home/icomoon.min.css",
+    "inputFiles": [
+      "wwwroot/css/home/icomoon.css"
+    ]
   }
 ]
