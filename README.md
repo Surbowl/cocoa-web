@@ -22,10 +22,17 @@ Core-me is a lovely personal website, you can use it to develop your own social 
 - ASP.NET Core 5.0 Runtime
 - [Redis](https://github.com/microsoftarchive/redis/releases)
 <br><br>
-## 版本&分支
-core-me 更多地是作为一个学习项目，所以 git 分支名称与所使用的 .NET 版本号相同
-- [2.1](https://github.com/Surbowl/core-me/tree/2.1): .NET Core 2.1 & jQuery
-- [5.0-preview](https://github.com/Surbowl/core-me/tree/5.0-preview): .NET 5.0 & Vue
+## 分支&版本
+- [2.1](https://github.com/Surbowl/core-me/tree/2.1) 
+  - .NET Core 2.1
+  - C# 7.3
+  - BULMA 0.8.x
+  - jQuery 3.3.x
+- [5.0-preview](https://github.com/Surbowl/core-me/tree/5.0-preview) 
+  - .NET 5.0 Preview
+  - C# 9.0
+  - BULMA 0.9.x
+  - Vue 2.6.x
 <br><br>
 ## 部署
 ### 将留言通过 Smtp 转发至您的 Email
