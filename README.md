@@ -17,6 +17,11 @@ Core-me is a lovely personal website, you can use it to develop your own social 
 - ASP.NET Core 2.1 Runtime
 - [Redis](https://github.com/microsoftarchive/redis/releases)
 <br><br>
+## 版本&分支
+core-me 更多地是作为一个学习项目，所以 git 分支名称与所使用的 .NET 版本号相同
+- [2.1](https://github.com/Surbowl/core-me/tree/2.1): .NET Core 2.1 & jQuery
+- [5.0-preview](https://github.com/Surbowl/core-me/tree/5.0-preview): .NET 5.0 & Vue
+<br><br>
 ## 部署
 ### 将留言通过 Smtp 转发至您的 Email
 请访问项目根目录下的 appsettings.json 与 appsettings.Development.json 文件，按照注释补全您的 Email Smtp 配置。
