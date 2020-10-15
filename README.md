@@ -1,5 +1,7 @@
 # 😆 core-me
-__5.0-preview 分支是使用 .NET 5.0-preview 与 Vue 的新版本，当前尚未完成__
+🚧 __5.0-preview 分支是使用 .NET 5.0-preview 与 Vue 的新版本，当前尚未完成__ 🚧
+<br>
+__如需一个可以运行的实例，请访问 [3.1 分支](https://github.com/Surbowl/core-me/tree/3.1)，3.1 使用 .NET 3.1 与 jQuery__
 <br><br>
 core-me 是一个敲可爱的 mini 个人网站，拥有简洁的界面与丰富的动效，响应式布局兼容各种设备，并带有留言功能
 <br>
