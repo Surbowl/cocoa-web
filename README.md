@@ -1,5 +1,5 @@
-# 😆 core-me
-🚧 __5.0-preview 分支是使用 .NET 5.0-preview 与 Vue 的新版本，当前尚未完成__
+# 😀 core-me
+🚧 __5.0-preview 分支是使用 .NET 5.0-preview、 Vue 2 与 TypeScript 的新版本，当前尚未完成__
 <br>
 🚧 __如需一个可以运行的实例，请访问 [2.1 分支](https://github.com/Surbowl/core-me/tree/2.1)，2.1 使用 .NET Core 2.1 与 jQuery__
 <br><br>
@@ -22,17 +22,18 @@ Core-me is a lovely personal website, you can use it to develop your own social 
 - ASP.NET Core 5.0 Runtime
 - [Redis](https://github.com/microsoftarchive/redis/releases)
 <br><br>
-## 分支&版本
+## 版本&特性
 - [2.1](https://github.com/Surbowl/core-me/tree/2.1) 
   - .NET Core 2.1
-  - C# 7.3
   - BULMA 0.8.x
   - jQuery 3.3.x
 - [5.0-preview](https://github.com/Surbowl/core-me/tree/5.0-preview) 
   - .NET 5.0 Preview
-  - C# 9.0
   - BULMA 0.9.x
   - Vue 2.6.x
+  - TypeScript (target es5)
+  - Webpack
+  - C# nullable reference types
 <br><br>
 ## 部署
 ### 将留言通过 Smtp 转发至您的 Email
