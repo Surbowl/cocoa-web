@@ -38,3 +38,6 @@ bld/
 project.lock.json
 project.fragment.lock.json
 artifacts/
+
+# npm
+node_modules/
