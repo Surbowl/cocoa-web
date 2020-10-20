@@ -29,11 +29,11 @@ Core-me is a lovely personal website, you can use it to develop your own social 
   - jQuery 3.3.x
 - [5.0-preview](https://github.com/Surbowl/core-me/tree/5.0-preview) 
   - .NET 5.0 Preview
+  - C# nullable reference types
   - BULMA 0.9.x
   - Vue 2.6.x
   - TypeScript (target es5)
   - Webpack
-  - C# nullable reference types
 <br><br>
 ## 部署
 ### 将留言通过 Smtp 转发至您的 Email
