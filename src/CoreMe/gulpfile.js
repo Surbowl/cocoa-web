@@ -1,25 +1,30 @@
-﻿/// <binding BeforeBuild='auto' ProjectOpened='auto' />
+﻿/// <binding BeforeBuild='auto' Clean='clean:js' />
 var gulp = require('gulp');
 var clean = require('gulp-clean');
 var browserify = require('browserify');
+var vueify = require('vueify')
+var envify = require('envify/custom')
 var source = require('vinyl-source-stream');
 var tsify = require('tsify');
 var uglify = require('gulp-uglify');
 var sourcemaps = require('gulp-sourcemaps');
 var buffer = require('vinyl-buffer');
 
-var paths = {
+// development or production
+const nodeEnv = 'production';
+
+const paths = {
     js: 'wwwroot/js/',
     lib: 'wwwroot/lib/'
 }
 
 // 需要编译的 ts 文件
-var tsFiles = [
+const tsFiles = [
     { controller: 'Home', action: 'Index' }
 ]
 
 // 需要移动的 lib 文件
-var libs = [
+const libs = [
     { name: 'bulma', dist: './node_modules/bulma/css/*.*' }
 ];
 
@@ -54,16 +59,22 @@ gulp.task('bundle:js', done => {
             cache: {},
             packageCache: {}
         })
-            .plugin(tsify)
-            .bundle()
-            .pipe(source(tsFile.action.firstLowerCase() + '.min.js'))
-            .pipe(buffer())
-            .pipe(sourcemaps.init({ loadMaps: true }))
-            .pipe(uglify())
-            .pipe(sourcemaps.write('./', {
-                mapFile: path => path.replace('.min.', '.')
-            }))
-            .pipe(gulp.dest(paths.js + tsFile.controller.firstLowerCase()));
+        .transform(vueify)
+        .transform(
+            // https://vuejs.org/v2/guide/deployment.html
+            { global: true },
+            envify({ NODE_ENV: nodeEnv })
+        )
+        .plugin(tsify)
+        .bundle()
+        .pipe(source(tsFile.action.firstLowerCase() + '.min.js'))
+        .pipe(buffer())
+        .pipe(sourcemaps.init({ loadMaps: true }))
+        .pipe(uglify())
+        .pipe(sourcemaps.write('./', {
+            mapFile: path => path.replace('.min.', '.')
+        }))
+        .pipe(gulp.dest(paths.js + tsFile.controller.firstLowerCase()));
     });
     done();
 });

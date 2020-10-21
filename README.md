@@ -31,7 +31,7 @@ Core-me is a lovely personal website, you can use it to develop your own social 
   - .NET 5.0 Preview
   - BULMA 0.9
   - Vue 2.6
-  - TypeScript
+  - TypeScript 4
   - Gulp 4
 <br><br>
 ## 部署
