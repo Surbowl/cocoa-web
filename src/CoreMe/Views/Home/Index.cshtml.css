@@ -9,3 +9,170 @@ body {
     background-attachment: fixed;
     background-position: right;
 }
+
+.is-full-screen {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    transition: background-color .2s ease-in-out;
+    background-color: transparent;
+    background-image: none;
+}
+
+    .navbar .navbar-item:hover {
+        background-color: transparent;
+    }
+
+    .navbar .has-underline:hover {
+        border-bottom: 1px solid;
+        color: #4a4a4a;
+    }
+
+.navbar-link:not(.is-arrowless)::after {
+    border-color: #4a4a4a;
+}
+
+.navbar-link:hover {
+    color: #4a4a4a;
+}
+
+.navbar-end {
+    overflow: hidden;
+}
+
+.header {
+    position: relative;
+    top: 26%;
+    width: 65%;
+    margin: auto;
+}
+
+    .header .is-gap-line {
+        margin: .3rem 0;
+    }
+
+#downArrow {
+    width: 100%;
+    position: absolute;
+    bottom: 24px;
+}
+
+@keyframes fade-jump {
+    0% {
+        opacity: 0;
+        transform: translateY(45px);
+        -webkit-transform: translateY(45px);
+    }
+
+    60% {
+        opacity: 1;
+        transform: translateY(-20px);
+        -webkit-transform: translateY(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        -webkit-transform: translateY(0);
+    }
+}
+
+.fade-jump-in {
+    animation: fade-jump .6s ease;
+    -webkit-animation: fade-jump .6s ease;
+}
+
+@keyframes float {
+    0%, 100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+    50% {
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-10px);
+    }
+}
+
+.is-floating {
+    animation: float 2.5s ease infinite;
+}
+
+@keyframes jump-in {
+    0% {
+        transform: translateY(60px);
+        -webkit-transform: translateY(60px);
+    }
+
+    60% {
+        transform: translateY(-4px);
+        -webkit-transform: translateY(-4px);
+    }
+
+    100% {
+        transform: translateY(0);
+        -webkit-transform: translateY(0);
+    }
+}
+
+.jump-in {
+    animation: jump-in .5s ease;
+    -webkit-animation: jump-in .5s ease;
+}
+
+/* icomoon */
+
+@font-face {
+    font-family: 'icomoon';
+    src: url('fonts/icomoon.eot?tzuhku');
+    src: url('fonts/icomoon.eot?tzuhku#iefix') format('embedded-opentype'), url('fonts/icomoon.ttf?tzuhku') format('truetype'), url('fonts/icomoon.woff?tzuhku') format('woff'), url('fonts/icomoon.svg?tzuhku#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-globe:before {
+    content: "\e905";
+}
+
+.icon-twitter:before {
+    content: "\e906";
+}
+
+.icon-instagram:before {
+    content: "\e904";
+}
+
+.icon-weibo:before {
+    content: "\e900";
+}
+
+.icon-linkedin:before {
+    content: "\e903";
+}
+
+.icon-chevron-down:before {
+    content: "\e902";
+}
+
+.icon-github:before {
+    content: "\e901";
+}

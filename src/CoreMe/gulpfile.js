@@ -27,20 +27,14 @@ const tsFiles = [
 
 // 有 css 文件需要编译的 Views
 const cssFiles = [
-    { controller: 'Home', action: 'Index' }
+    { controller: 'Home', action: 'Index' },
+    { controller: 'Shared', action: '_Layout' }
 ]
 
 // 需要移动到 wwwroot/lib 的文件
 const libs = [
     { name: 'bulma', dist: './node_modules/bulma/css/*.*' }
 ];
-
-// 设置首字母小写
-String.prototype.firstLowerCase = function () {
-    return this.replace(/\b(\w)(\w*)/g, function ($0, $1, $2) {
-        return $1.toLowerCase() + $2;
-    });
-}
 
 // 将 lib 移动到 wwwroot/lib
 gulp.task('move:lib', done => {
@@ -53,13 +47,13 @@ gulp.task('move:lib', done => {
 
 // 清空 wwwroot/js 文件夹
 gulp.task('clean:js', () => {
-    return gulp.src(paths.js, { read: false, allowEmpty: true })
+    return gulp.src([paths.js + '/**/*.min.js', paths.js + '/**/*.js.map'], { read: false, allowEmpty: true })
         .pipe(clean());
 });
 
 // 清空 wwwroot/css 文件夹
 gulp.task('clean:css', () => {
-    return gulp.src(paths.css, { read: false, allowEmpty: true })
+    return gulp.src([paths.css + '/**/*.min.css', paths.css + '/**/*.css.map'], { read: false, allowEmpty: true })
         .pipe(clean());
 });
 
@@ -69,11 +63,11 @@ gulp.task('min:css', done => {
         gulp.src('./Views/' + cssFile.controller + '/' + cssFile.action + '.cshtml.css')
             .pipe(sourcemaps.init())
             .pipe(cleanCSS({ debug: debug }))
-            .pipe(rename(cssFile.action.firstLowerCase() + '.min.css'))
+            .pipe(rename(cssFile.action.toLowerCase() + '.min.css'))
             .pipe(sourcemaps.write('./', {
                 mapFile: path => path.replace('.min.', '.')
             }))
-            .pipe(gulp.dest(paths.css + '/' + cssFile.controller.firstLowerCase()));
+            .pipe(gulp.dest(paths.css + '/' + cssFile.controller.toLowerCase()));
     });
     done();
 });
@@ -97,14 +91,14 @@ gulp.task('min:js', done => {
             )
             .plugin(tsify)
             .bundle()
-            .pipe(source(tsFile.action.firstLowerCase() + '.min.js'))
+            .pipe(source(tsFile.action.toLowerCase() + '.min.js'))
             .pipe(buffer())
             .pipe(sourcemaps.init({ loadMaps: true }))
             .pipe(uglify())
             .pipe(sourcemaps.write('./', {
                 mapFile: path => path.replace('.min.', '.')
             }))
-            .pipe(gulp.dest(paths.js + tsFile.controller.firstLowerCase()));
+            .pipe(gulp.dest(paths.js + tsFile.controller.toLowerCase()));
     });
     done();
 });
