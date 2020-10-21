@@ -27,7 +27,7 @@ const paths = {
 var tsFiles = [];
 var cssFiles = [];
 
-gulp.task('getPaths:ts', () => {
+gulp.task('find:ts', () => {
     return gulp.src('Views/**/*.cshtml.ts')
       .pipe(through.obj(function (file, enc, cb) {
         let pathArr = file.path.split('\\');
@@ -41,7 +41,7 @@ gulp.task('getPaths:ts', () => {
     }));
 });
   
-gulp.task('getPaths:css', () => {
+gulp.task('find:css', () => {
     return gulp.src('Views/**/*.cshtml.css')
       .pipe(through.obj(function (file, enc, cb) {
         let pathArr = file.path.split('\\');
@@ -130,12 +130,12 @@ gulp.task('default', gulp.parallel([
     'move:lib',
     gulp.series([
         'clean:css',
-        'getPaths:css',
+        'find:css',
         'min:css'
     ]),
     gulp.series([
         'clean:js',
-        'getPaths:ts',
+        'find:ts',
         'min:js'
     ])
 ]));
