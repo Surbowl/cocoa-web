@@ -1,4 +1,4 @@
-﻿/// <binding BeforeBuild='auto' Clean='clean' />
+﻿/// <binding BeforeBuild='default' Clean='clean' />
 const gulp = require('gulp');
 const clean = require('gulp-clean');
 const cleanCSS = require('gulp-clean-css');
@@ -11,30 +11,49 @@ const tsify = require('tsify');
 const uglify = require('gulp-uglify');
 const sourcemaps = require('gulp-sourcemaps');
 const buffer = require('vinyl-buffer');
+const through = require('through2');
 
 const debug = false;
-
+// 需要移动到 wwwroot/lib 的文件
+const libs = [
+    { name: 'bulma', dist: './node_modules/bulma/css/*.*' }
+];
 const paths = {
     js: 'wwwroot/js/',
     css: 'wwwroot/css/',
     lib: 'wwwroot/lib/'
 }
 
-// 有 ts 文件需要编译的 Views
-const tsFiles = [
-    { controller: 'Home', action: 'Index' }
-]
+var tsFiles = [];
+var cssFiles = [];
 
-// 有 css 文件需要编译的 Views
-const cssFiles = [
-    { controller: 'Home', action: 'Index' },
-    { controller: 'Shared', action: '_Layout' }
-]
-
-// 需要移动到 wwwroot/lib 的文件
-const libs = [
-    { name: 'bulma', dist: './node_modules/bulma/css/*.*' }
-];
+gulp.task('getPaths:ts', () => {
+    return gulp.src('Views/**/*.cshtml.ts')
+      .pipe(through.obj(function (file, enc, cb) {
+        let pathArr = file.path.split('\\');
+        let tsFile = {
+            controller: pathArr.slice(pathArr.length - 2,pathArr.length)[0],
+            action: pathArr.slice(pathArr.length - 1,pathArr.length)[0].replace('.cshtml','').replace('.ts','')
+        };
+        console.log('Find .ts file in Views/' + tsFile.controller + '/' + tsFile.action);
+        tsFiles.push(tsFile)
+        cb();
+    }));
+});
+  
+gulp.task('getPaths:css', () => {
+    return gulp.src('Views/**/*.cshtml.css')
+      .pipe(through.obj(function (file, enc, cb) {
+        let pathArr = file.path.split('\\');
+        let cssFile = {
+            controller: pathArr.slice(pathArr.length - 2,pathArr.length)[0],
+            action: pathArr.slice(pathArr.length - 1,pathArr.length)[0].replace('.cshtml','').replace('.css','')
+        };
+        console.log('Find .css file in Views/' + cssFile.controller + '/' + cssFile.action);
+        cssFiles.push(cssFile);
+        cb();
+    }));
+});
 
 // 将 lib 移动到 wwwroot/lib
 gulp.task('move:lib', done => {
@@ -107,14 +126,16 @@ gulp.task('min:js', done => {
 gulp.task('clean', gulp.parallel(['clean:css', 'clean:js']));
 
 // 清除生成的文件并重新编译
-gulp.task('auto', gulp.parallel([
+gulp.task('default', gulp.parallel([
     'move:lib',
     gulp.series([
         'clean:css',
+        'getPaths:css',
         'min:css'
     ]),
     gulp.series([
         'clean:js',
+        'getPaths:ts',
         'min:js'
     ])
 ]));
