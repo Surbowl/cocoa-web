@@ -1,9 +1,13 @@
 @{
     ViewData["Title"] = "Home Page";
 }
+@section styles {
+    <link rel="stylesheet" href="~/lib/bulma/bulma.min.css" asp-append-version="false" />
+}
 
-<div id='app-root'>Loading...</div>
+<div id="app-root">
+</div>
 
 @section scripts {
-    <script src="~/dist/main.js" asp-append-version="true"></script>
+    <script src="~/js/home/index.min.js" asp-append-version="true"></script>
 }

@@ -237,3 +237,8 @@ _Pvt_Extensions
 
 # FAKE - F# Make
 .fake/
+
+# gulp build
+wwwroot/lib/
+wwwroot/js/
+wwwroot/css/
