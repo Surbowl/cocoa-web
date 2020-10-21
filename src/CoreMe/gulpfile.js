@@ -23,7 +23,7 @@ const tsFiles = [
     { controller: 'Home', action: 'Index' }
 ]
 
-// 需要移动的 lib 文件
+// 需要移动到 wwwroot/lib 的文件
 const libs = [
     { name: 'bulma', dist: './node_modules/bulma/css/*.*' }
 ];
