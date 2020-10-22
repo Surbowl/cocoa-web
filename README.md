@@ -32,5 +32,5 @@ core-me 是一个敲可爱的 mini 个人网站，拥有简洁的界面与丰富
 <br><br>
 ## Prerequisites
 - [.NET 5.0 SDK](https://dotnet.microsoft.com/download/dotnet-core)
-- [NodeJS](https://nodejs.org)
+- [Node.js](https://nodejs.org)
 - [Redis](https://github.com/redis/redis/releases)
