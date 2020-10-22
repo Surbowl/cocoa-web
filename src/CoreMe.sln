@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30524.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreMe", "CoreMe\CoreMe.csproj", "{DF6CA77D-2BCF-4335-A6C0-18E12903CA01}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreMe", "CoreMe.csproj", "{DF6CA77D-2BCF-4335-A6C0-18E12903CA01}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
