@@ -1,5 +1,5 @@
 # 😀 core-me
-🚧 __5.0-preview 分支是使用 .NET 5.0-preview、 Vue 2 与 TypeScript 的新版本，当前尚未完成__
+🚧 __5.0-preview 分支是使用 .NET 5.0-preview、 Vue 与 TypeScript 的新版本，当前尚未完成__
 <br>
 🚧 __如需一个可以运行的实例，请访问 [2.1 分支](https://github.com/Surbowl/core-me/tree/2.1)，2.1 使用 .NET Core 2.1 与 jQuery__
 <br><br>
