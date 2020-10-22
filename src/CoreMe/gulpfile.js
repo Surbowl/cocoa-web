@@ -14,46 +14,15 @@ const buffer = require('vinyl-buffer');
 const through = require('through2');
 
 const debug = false;
-// 需要移动到 wwwroot/lib 的文件
-const libs = [
-    { name: 'bulma', dist: './node_modules/bulma/css/*.*' }
-];
 const paths = {
     js: 'wwwroot/js/',
     css: 'wwwroot/css/',
     lib: 'wwwroot/lib/'
 }
-
-var tsFiles = [];
-var cssFiles = [];
-
-gulp.task('find:ts', () => {
-    return gulp.src('Views/**/*.cshtml.ts')
-      .pipe(through.obj(function (file, enc, cb) {
-        let pathArr = file.path.split('\\');
-        let tsFile = {
-            controller: pathArr.slice(pathArr.length - 2,pathArr.length)[0],
-            action: pathArr.slice(pathArr.length - 1,pathArr.length)[0].replace('.cshtml','').replace('.ts','')
-        };
-        console.log('Find .ts file in Views/' + tsFile.controller + '/' + tsFile.action);
-        tsFiles.push(tsFile)
-        cb();
-    }));
-});
-  
-gulp.task('find:css', () => {
-    return gulp.src('Views/**/*.cshtml.css')
-      .pipe(through.obj(function (file, enc, cb) {
-        let pathArr = file.path.split('\\');
-        let cssFile = {
-            controller: pathArr.slice(pathArr.length - 2,pathArr.length)[0],
-            action: pathArr.slice(pathArr.length - 1,pathArr.length)[0].replace('.cshtml','').replace('.css','')
-        };
-        console.log('Find .css file in Views/' + cssFile.controller + '/' + cssFile.action);
-        cssFiles.push(cssFile);
-        cb();
-    }));
-});
+// 需要移动到 wwwroot/lib 的文件
+const libs = [
+    { name: 'bulma', dist: 'node_modules/bulma/css/*.*' }
+];
 
 // 将 lib 移动到 wwwroot/lib
 gulp.task('move:lib', done => {
@@ -76,31 +45,34 @@ gulp.task('clean:css', () => {
         .pipe(clean());
 });
 
-// 压缩 css 并创建 map
-gulp.task('min:css', done => {
-    cssFiles.forEach((cssFile) => {
-        gulp.src('./Views/' + cssFile.controller + '/' + cssFile.action + '.cshtml.css')
-            .pipe(sourcemaps.init())
-            .pipe(cleanCSS({ debug: debug }))
-            .pipe(rename(cssFile.action.toLowerCase() + '.min.css'))
-            .pipe(sourcemaps.write('./', {
-                mapFile: path => path.replace('.min.', '.')
-            }))
-            .pipe(gulp.dest(paths.css + '/' + cssFile.controller.toLowerCase()));
-    });
-    done();
+// 找到 View/ 文件夹下的所有 *.cshtml.css 文件，压缩生成 *.min.css 与 *.css.map 文件保存在 wwwroot/css 文件夹下
+gulp.task('min:css', () => {
+    return gulp.src('Views/**/*.cshtml.css')
+        .pipe(sourcemaps.init())
+        .pipe(cleanCSS({ debug: debug }))
+        .pipe(rename(path => {
+            let pathArr = path.dirname.split('\\');
+            return {
+                dirname: pathArr[pathArr.length - 1].toLowerCase(),
+                basename: path.basename.toLowerCase().replace('.cshtml', ''),
+                extname: '.min.css'
+            };
+        }))
+        .pipe(sourcemaps.write('./', {
+            mapFile: path => path.replace('.min.', '.')
+        }))
+        .pipe(gulp.dest(paths.css));
 });
 
-// 将 ts 编译为 min.js 并创建 map
-gulp.task('min:js', done => {
-    tsFiles.forEach((tsFile) => {
+// 找到 View/ 文件夹下的所有 *.cshtml.ts 文件，编译与压缩，并将生成的 *.min.js 与 *.js.map 文件保存在 wwwroot/js 文件夹下
+gulp.task('min:js', () => {
+    var bundle = function (file) {
+        let dirNames = file.dirname.split('\\');
+        let dest = paths.js + dirNames[dirNames.length - 1].toLowerCase();
         // https://www.bookstack.cn/read/TypeScript-4.0-zh/8593981d0f4f8496.md
-        browserify({
-            basedir: './Views',
+        return browserify({
             debug: debug,
-            entries: [tsFile.controller + '/' + tsFile.action + '.cshtml.ts'],
-            cache: {},
-            packageCache: {}
+            entries: file.path
         })
             // https://vuejs.org/v2/guide/deployment.html
             .transform(vueify)
@@ -110,16 +82,23 @@ gulp.task('min:js', done => {
             )
             .plugin(tsify)
             .bundle()
-            .pipe(source(tsFile.action.toLowerCase() + '.min.js'))
+            .pipe(source(file.basename.toLowerCase().replace('.cshtml.ts', '.min.js')))
             .pipe(buffer())
             .pipe(sourcemaps.init({ loadMaps: true }))
             .pipe(uglify())
             .pipe(sourcemaps.write('./', {
                 mapFile: path => path.replace('.min.', '.')
             }))
-            .pipe(gulp.dest(paths.js + tsFile.controller.toLowerCase()));
-    });
-    done();
+            .pipe(gulp.dest(dest));
+    }
+
+    return gulp.src('Views/**/*.cshtml.ts')
+        .pipe(through.obj(function (file, enc, next) {
+            if (!file.isNull() && !file.isDirectory()) {
+                bundle(file);
+            }
+            next(null, file);
+        }));
 });
 
 // 清除生成的文件
@@ -130,12 +109,10 @@ gulp.task('default', gulp.parallel([
     'move:lib',
     gulp.series([
         'clean:css',
-        'find:css',
         'min:css'
     ]),
     gulp.series([
         'clean:js',
-        'find:ts',
         'min:js'
     ])
 ]));
