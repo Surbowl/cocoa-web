@@ -74,13 +74,13 @@ gulp.task('min:js', () => {
             debug: debug,
             entries: file.path
         })
+            .plugin(tsify)
             // https://vuejs.org/v2/guide/deployment.html
             .transform(vueify)
             .transform(
                 { global: true },
                 envify({ NODE_ENV: (debug ? 'development' : 'production') })
             )
-            .plugin(tsify)
             .bundle()
             .pipe(source(file.basename.toLowerCase().replace('.cshtml.ts', '.min.js')))
             .pipe(buffer())
