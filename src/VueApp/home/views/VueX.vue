@@ -43,29 +43,29 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component } from 'vue-property-decorator'
+    import { Vue, Component } from 'vue-property-decorator'
 
-import { mapGetters } from 'vuex'
+    import { mapGetters } from 'vuex'
 
-@Component({
-    name: 'Vuex',
-    computed: {
-        ...mapGetters('vuexPageModule', [
-            'count'
-        ]),
+    @Component({
+        name: 'Vuex',
+        computed: {
+            ...mapGetters('vuexPageModule', [
+                'count'
+            ]),
+        }
+    })
+    export default class Vuex extends Vue {
+
+        addCount(): void {
+            this.$store.dispatch('vuexPageModule/increaseCount')
+        }
+
+        reset(): void {
+            this.$store.dispatch('vuexPageModule/resetCount')
+        }
+
     }
-})
-export default class Vuex extends Vue {
-
-    addCount(): void {
-        this.$store.dispatch('vuexPageModule/increaseCount')
-    }
-
-    reset(): void {
-        this.$store.dispatch('vuexPageModule/resetCount')
-    }
-
-}
 </script>
 
 <style scoped>

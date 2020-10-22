@@ -2,7 +2,7 @@ import { Module } from 'vuex'
 import { GetterTree } from 'vuex'
 import { ActionTree } from 'vuex'
 import { MutationTree } from 'vuex'
-import { RootState } from '@/template/store/state'
+import { RootState } from '@/home/store/state'
 
 import { VuexPageState } from './vuexpage-state'
 

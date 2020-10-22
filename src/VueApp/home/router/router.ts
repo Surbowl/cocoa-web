@@ -1,12 +1,12 @@
 import VueRouter from 'vue-router'
 
 // Pages
-import Vuex from '@/template/views/Vuex.vue'
-import TemplateInfo from '@/template/views/TemplateInfo.vue'
-import ThirdPartyLibraries from '@/template/views/ThirdPartyLibraries.vue'
-import CompositionApi from '@/template/views/CompositionApi.vue'
+import Vuex from '@/home/views/Vuex.vue'
+import TemplateInfo from '@/home/views/TemplateInfo.vue'
+import ThirdPartyLibraries from '@/home/views/ThirdPartyLibraries.vue'
+import CompositionApi from '@/home/views/CompositionApi.vue'
 
-const routePrefix = 'template'
+const routePrefix = 'home'
 
 const routes = [
 	{

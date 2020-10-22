@@ -45,7 +45,7 @@ namespace CoreMe
                 endpoints.MapControllerRoute(
                    name: "app-fallback",
                    pattern: "{*anything}/",
-                   defaults: new { controller = "Template", action = "Index" });
+                   defaults: new { controller = "Home", action = "Index" });
             });
         }
     }

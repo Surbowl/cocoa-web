@@ -5,12 +5,15 @@
 		<Nullable>enable</Nullable>
 		<WarningsAsErrors>$(WarningsAsErrors);CS8600;CS8602;CS8603;CS8618;CS8625</WarningsAsErrors>
 		<Version>5.0.0</Version>
-		<RepositoryUrl>https://github.com/Surbowl/core-me</RepositoryUrl>
+		<RepositoryUrl>https://github.com/Surbowl/core-me.git</RepositoryUrl>
 		<Copyright />
 		<Authors>Surbowl</Authors>
 		<Company />
     <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
     <TypeScriptToolsVersion>4.0</TypeScriptToolsVersion>
+    <PackageProjectUrl>https://github.com/Surbowl/core-me</PackageProjectUrl>
+    <Description>README.md: https://github.com/Surbowl/core-me/blob/5.0-preview/README.md
+Use template: https://github.com/danijelh/aspnetcore-vue-typescript-template</Description>
   </PropertyGroup>
 
   <ItemGroup>
@@ -21,7 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.0-rc.2.20516.1" />
   </ItemGroup>
 
   <ItemGroup>

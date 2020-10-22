@@ -2,7 +2,7 @@
 
 namespace CoreMe.Controllers
 {
-    public class TemplateController : Controller
+    public class HomeController : Controller
     {
         /// <summary>
         /// SPA entry point
