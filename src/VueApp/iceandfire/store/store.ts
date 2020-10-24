@@ -27,7 +27,7 @@ const actions: ActionTree<RootState, RootState> = {
 	getCharacterById({ commit }, id: number): Promise<boolean> {
 		return new Promise((resolve, reject) => {
 			axios
-				.get('/iceandfire/api/characters/' + id)
+				.get('/api/iceandfire/getCharacter?id=' + id)
 				.then(response => {
 					const payload: CharacterResponse = response && response.data
 					commit('SET_CHARACTER', payload)

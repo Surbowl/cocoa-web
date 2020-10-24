@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -11,7 +12,7 @@ namespace CoreMe
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddHttpClient();
-            
+
             services.Configure<RouteOptions>(options => options.LowercaseUrls = true);
 
             services.AddControllersWithViews();
@@ -38,14 +39,15 @@ namespace CoreMe
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
+                    name: "api-route",
+                    pattern: "api/{controller}/{action}");
+
+                endpoints.MapControllerRoute(
                     name: "spa-route",
                     pattern: "{controller}/{*anything=Index}",
                     defaults: new { action = "Index" });
 
-                endpoints.MapControllerRoute(
-                   name: "app-fallback",
-                   pattern: "{*anything}/",
-                   defaults: new { controller = "Home", action = "Index" });
+                endpoints.MapDefaultControllerRoute();
             });
         }
     }
