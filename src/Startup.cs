@@ -39,10 +39,6 @@ namespace CoreMe
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
-                    name: "api-route",
-                    pattern: "api/{controller}/{action}");
-
-                endpoints.MapControllerRoute(
                     name: "spa-route",
                     pattern: "{controller}/{*anything=Index}",
                     defaults: new { action = "Index" });
