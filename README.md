@@ -31,3 +31,7 @@ cocoa 是一个敲可爱的 mini 个人网站，拥有简洁的界面与丰富�
 - [.NET 5.0 SDK](https://dotnet.microsoft.com/download/dotnet-core)
 - [Node.js](https://nodejs.org)
 - [Redis](https://github.com/redis/redis/releases)
+
+## Other
+仓库原名 CoreMe，于2020年10月26日更名为 cocoa-web
+5.0-preview 基于 danijelh/[AspNetCore.Vue.TypeScript.Template v2.0.0](https://github.com/danijelh/aspnetcore-vue-typescript-template/releases/tag/v2.0.0)
