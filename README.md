@@ -1,9 +1,7 @@
 # Cocoa-web
 🚧 __Unfinished 当前尚未完成__
 
-cocoa 是一个敲可爱的 mini 个人网站，拥有简洁的界面与丰富的动效，响应式布局兼容各种设备，并带有留言功能
-
-您可以利用它开发自己的社交或求职网站
+cocoa 是一个敲可爱的 mini 个人网站，您可以利用它开发自己的社交或求职网站
 
 👉 [Demo](https://surbowl.online)
 
@@ -27,14 +25,11 @@ cocoa 是一个敲可爱的 mini 个人网站，拥有简洁的界面与丰富�
 ## Prerequisites
 - [.NET 5.0 SDK](https://dotnet.microsoft.com/download/dotnet-core)
 - [Node.js](https://nodejs.org)
-- [Redis](https://github.com/redis/redis/releases)
 
 ## Build
 #### Step 1: Install frontend packages
     npm install
-#### Step 2: Run [Redis](https://redis.io/topics/quickstart)
-
-#### Step 3: Build & run app 🚀
+#### Step 2: Build & run app 🚀
     dotnet run
 
 ## Development, publishing and available commands
