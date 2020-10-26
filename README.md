@@ -32,11 +32,9 @@ cocoa 是一个敲可爱的 mini 个人网站，拥有简洁的界面与丰富�
 ## Build
 #### Step 1: Install frontend packages
     npm install
-#### Step 2: Restores the dependencies of proj
-    dotnet restore
-#### Step 3: Run [Redis](https://redis.io/topics/quickstart)
+#### Step 2: Run [Redis](https://redis.io/topics/quickstart)
 
-#### Step 4: Build&Run app 🚀
+#### Step 3: Build&Run app 🚀
     dotnet run
 
 ## Development, publishing and available commands
