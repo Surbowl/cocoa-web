@@ -8,16 +8,16 @@ cocoa 是一个敲可爱的 mini 个人网站，拥有简洁的界面与丰富�
 👉 [Demo](https://surbowl.online)
 
 <p style="text-align:center">
-    <a href="https://github.com/Surbowl/cocoa-web/blob/5.0-preview/LICENSE">
+    <a href="./LICENSE">
       <img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat" />
     </a>
-    <a href="https://github.com/Surbowl/cocoa-web/pulls">
+    <a href="./pulls">
         <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="prs welcome">
     </a>
 </p>
 
 ## Features
-- .NET 5.0 Preview
+- .NET 5.0
 - Vue 2.6
 - TypeScript
 - Bulma
@@ -36,7 +36,7 @@ cocoa 是一个敲可爱的 mini 个人网站，拥有简洁的界面与丰富�
     dotnet restore
 #### Step 3: Run [Redis](https://redis.io/topics/quickstart)
 
-#### Step 4: Build and run app 🚀
+#### Step 4: Build&Run app 🚀
     dotnet run
 
 ## Development, publishing and available commands
