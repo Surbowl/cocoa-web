@@ -34,7 +34,7 @@ cocoa 是一个敲可爱的 mini 个人网站，拥有简洁的界面与丰富�
     npm install
 #### Step 2: Run [Redis](https://redis.io/topics/quickstart)
 
-#### Step 3: Build & Run app 🚀
+#### Step 3: Build & run app 🚀
     dotnet run
 
 ## Development, publishing and available commands
