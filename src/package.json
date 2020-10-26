@@ -1,11 +1,11 @@
 {
-  "name": "core-me",
+  "name": "cocoa-web",
   "version": "5.0.0",
   "main": "app.js",
   "license": "MIT",
   "author": "Surbowl",
-  "homepage": "https://github.com/Surbowl/core-me",
-  "repository": "https://github.com/Surbowl/core-me.git",
+  "homepage": "https://github.com/Surbowl/cocoa-web",
+  "repository": "https://github.com/Surbowl/cocoa-web.git",
   "scripts": {
     "dev": "./node_modules/.bin/webpack-cli --mode development --watch --config webpack.config.js --display-error-details",
     "build:dev": "./node_modules/.bin/webpack-cli --mode development --config webpack.config.js",

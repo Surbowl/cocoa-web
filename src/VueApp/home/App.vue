@@ -49,7 +49,7 @@
         <div class="container">
             <footer>
                 <hr />
-                <p>&copy; 2018 - CoreMe</p>
+                <p>&copy; 2020 - Cocoa</p>
             </footer>
         </div>
 

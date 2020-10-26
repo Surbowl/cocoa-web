@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace CoreMe.Controllers
+namespace Cocoa.Web.Controllers
 {
     public class HomeController : Controller
     {
