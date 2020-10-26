@@ -11,7 +11,7 @@ cocoa 是一个敲可爱的 mini 个人网站，拥有简洁的界面与丰富�
     <a href="./LICENSE">
       <img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat" />
     </a>
-    <a href="./pulls">
+    <a href="https://github.com/Surbowl/cocoa-web/pulls">
         <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="prs welcome">
     </a>
 </p>
