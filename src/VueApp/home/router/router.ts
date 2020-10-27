@@ -2,7 +2,7 @@ import VueRouter from 'vue-router'
 
 // Pages
 import Vuex from '@/home/views/Vuex.vue'
-import TemplateInfo from '@/home/views/TemplateInfo.vue'
+import Hello from '@/home/views/Hello.vue'
 import ThirdPartyLibraries from '@/home/views/ThirdPartyLibraries.vue'
 import CompositionApi from '@/home/views/CompositionApi.vue'
 
@@ -11,12 +11,12 @@ const routePrefix = 'home'
 const routes = [
 	{
 		path: '*',
-		redirect: { name: 'templateInfo' }
+		redirect: { name: 'hello' }
 	},
 	{
-		name: 'templateInfo',
-		path: `/${routePrefix}/info`,
-		component: TemplateInfo
+		name: 'hello',
+		path: `/${routePrefix}/hello`,
+		component: Hello
 	},
 	{
 		name: 'compositionApi',

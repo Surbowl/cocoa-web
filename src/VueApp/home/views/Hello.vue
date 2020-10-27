@@ -7,8 +7,8 @@
             <h2 class="subtitle" data-aos="zoom-out-left">
                 Template is created using Vue, Vue router, Vuex, TypeScript and Bulma.
             </h2>
-            <template-info-about></template-info-about>
-            <template-info-stack></template-info-stack>
+            <hello-banner></hello-banner>
+            <!--<template-info-stack></template-info-stack>-->
         </div>
     </div>
 </template>
@@ -16,17 +16,17 @@
 <script lang="ts">
     import { Vue, Component } from 'vue-property-decorator'
 
-    import TemplateInfoAbout from '@/home/components/TemplateInfo/TemplateInfoAbout.vue'
-    import TemplateInfoStack from '@/home/components/TemplateInfo/TemplateInfoStack.vue'
+    import HelloBanner from '@/home/components/Hello/HelloBanner.vue'
+    //import TemplateInfoStack from '@/home/components/Home/TemplateInfoStack.vue'
 
     @Component({
-        name: 'TemplateInfo',
+        name: 'Hello',
         components: {
-            TemplateInfoAbout,
-            TemplateInfoStack
+            HelloBanner,
+            //TemplateInfoStack
         }
     })
-    export default class TemplateInfo extends Vue {
+    export default class Hello extends Vue {
         pageTitle: string = '.NET with Vue and TypeScript'
     }
 </script>

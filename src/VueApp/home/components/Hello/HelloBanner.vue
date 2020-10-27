@@ -16,9 +16,9 @@
 import { Vue, Component } from 'vue-property-decorator'
 
 @Component({
-    name: 'TemplateInfoAbout'
+    name: 'HelloBanner'
 })
-export default class TemplateInfoAbout extends Vue { }
+export default class HelloBanner extends Vue { }
 </script>
 
 <style scoped>

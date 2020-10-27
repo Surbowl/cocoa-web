@@ -23,7 +23,7 @@
                             </p>
                             <ul class="menu-list">
                                 <li>
-                                    <router-link :to="{ name: 'templateInfo' }">Template</router-link>
+                                    <router-link :to="{ name: 'hello' }">Hello</router-link>
                                 </li>
                                 <li>
                                     <router-link :to="{ name: 'compositionApi' }">Composition API</router-link>
