@@ -1,10 +1,10 @@
 <template>
     <div>
         <div class="container">
-            <h1 class="title">
+            <h1 class="title" data-aos="zoom-out-left">
                 {{ pageTitle }}
             </h1>
-            <h2 class="subtitle">
+            <h2 class="subtitle" data-aos="zoom-out-left">
                 Template is created using Vue, Vue router, Vuex, TypeScript and Bulma.
             </h2>
             <template-info-about></template-info-about>

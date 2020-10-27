@@ -7,7 +7,7 @@ const paths = {
     js: './wwwroot/dist/js/'
 };
 
-gulp.task('clean-css', done => rimraf(paths.css, done));
-gulp.task('clean-js', done => rimraf(paths.js, done));
+gulp.task('clean:css', done => rimraf(paths.css, done));
+gulp.task('clean:js', done => rimraf(paths.js, done));
 
-gulp.task('clean', gulp.series(['clean-js', 'clean-css']));
+gulp.task('clean', gulp.series(['clean:js', 'clean:css']));

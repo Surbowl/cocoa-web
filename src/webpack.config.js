@@ -19,7 +19,6 @@ var appEntryFiles = {}
 fs.readdirSync(applicationBasePath).forEach(function (name) {
 
     let spaEntryPoint = applicationBasePath + name + '/app.ts'
-
     if (fs.existsSync(spaEntryPoint)) {
         appEntryFiles[name] = spaEntryPoint
     }

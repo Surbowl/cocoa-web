@@ -4,7 +4,6 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-3">
-
                     <section class="section">
                         <aside class="menu">
                             <p class="menu-label">
@@ -12,10 +11,7 @@
                             </p>
                             <ul class="menu-list">
                                 <li>
-                                    <router-link :to="{ name: 'vuex' }">Vuex</router-link>
-                                </li>
-                                <li>
-                                    <router-link :to="{ name: 'thirdpartylibraries' }">Third party libraries</router-link>
+                                    <router-link :to="{ name: 'counter' }">Counter</router-link>
                                 </li>
                             </ul>
                             <p class="menu-label">
@@ -23,15 +19,11 @@
                             </p>
                             <ul class="menu-list">
                                 <li>
-                                    <router-link :to="{ name: 'templateInfo' }">Template</router-link>
-                                </li>
-                                <li>
-                                    <router-link :to="{ name: 'compositionApi' }">Composition API</router-link>
+                                    <router-link :to="{ name: 'moduleinfo' }">Module info</router-link>
                                 </li>
                             </ul>
                         </aside>
                     </section>
-
                 </div>
                 <div class="column is-9">
 
@@ -45,28 +37,24 @@
                 </div>
             </div>
         </div>
-
-        <div class="container">
-            <footer>
-                <hr />
-                <p>&copy; 2020 - Cocoa</p>
-            </footer>
-        </div>
+        <notifications group="global" />
 
     </div>
+
 </template>
 
-<script lang="ts">
+<script>
+    import Vue from 'vue'
+    import Notifications from 'vue-notification'
 
-    import { Vue, Component } from 'vue-property-decorator'
+    Vue.use(Notifications)
 
-    @Component({
+    export default {
         name: 'App'
-    })
-    export default class App extends Vue { }
+    }
 
-    import * as Aos from 'aos';
-    Aos.init();
+    import AOS from 'aos';
+    AOS.init();
 </script>
 
 <style scoped lang="scss">
