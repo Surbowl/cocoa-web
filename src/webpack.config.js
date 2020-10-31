@@ -123,6 +123,8 @@ module.exports = function (env, argv) {
                                 fallback: {
                                     loader: 'file-loader',
                                     options: {
+                                        // https://stackoverflow.com/questions/59114479/when-using-file-loader-and-html-loader-in-webpack-the-src-attr-of-image-is-obj/59115624#59115624
+                                        esModule: false,
                                         name: 'img/[name].[hash:8].[ext]'
                                     }
                                 }

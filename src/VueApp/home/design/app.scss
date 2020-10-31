@@ -11,15 +11,15 @@
 
 .navbar .has-underline:hover {
     border-bottom: 1px solid;
-    color: #4a4a4a;
+    color: #4A4A4A;
 }
 
 .navbar-link:not(.is-arrowless)::after {
-    border-color: #4a4a4a;
+    border-color: #4A4A4A;
 }
 
 .navbar-link:hover {
-    color: #4a4a4a;
+    color: #4A4A4A;
 }
 
 .navbar-end {
@@ -33,11 +33,18 @@
     margin: auto;
 }
 
+.gap-top {
+    margin-top: 1rem;
+}
+
+.section {
+    background-color: white;
+}
+
 .jump-in {
     animation: jump-in .5s ease;
     -webkit-animation: jump-in .5s ease;
 }
-
 
 .fade-jump-in {
     animation: fade-jump .6s ease;
