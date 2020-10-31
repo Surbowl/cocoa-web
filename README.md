@@ -21,7 +21,6 @@ cocoa 是一个敲可爱的 mini 个人网站，您可以利用它开发自己�
 - Bulma
 - Sass
 - Webpack
-- Gulp
 
 ## Prerequisites
 - [.NET 5.0 SDK](https://dotnet.microsoft.com/download/dotnet-core)

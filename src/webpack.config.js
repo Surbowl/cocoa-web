@@ -30,9 +30,9 @@ fs.readdirSync(applicationBasePath).forEach(function (name) {
 
 })
 
-// Add main site.scss file with Bulma(or any other source by choice)
+// Add main global.scss file with Bulma(or any other source by choice)
 appEntryFiles["vendor"] = [
-    path.resolve(__dirname, "VueApp/common/design/site.scss"),
+    path.resolve(__dirname, "VueApp/shared/design/_layout.scss"),
 ]
 
 module.exports = function (env, argv) {
