@@ -2,19 +2,9 @@
     ViewData["Title"] = "Home";
 }
 @section styles{
-    <environment include="Development">
-        <link rel="stylesheet" href="~/dist/css/home/main.css" asp-append-version="true" />
-    </environment>
-    <environment exclude="Development">
-        <link rel="stylesheet" href="~/dist/css/home/main.css" asp-append-version="true" />
-    </environment>
+    <link rel="stylesheet" href="~/dist/css/home/main.css" asp-append-version="true" />
 }
 @section scripts{
-    <environment include="Development">
-        <script src="~/dist/js/home/bundle.js" asp-append-version="true"></script>
-    </environment>
-    <environment exclude="Development">
-        <script src="~/dist/js/home/bundle.js" asp-append-version="true"></script>
-    </environment>
+    <script src="~/dist/js/home/bundle.js" asp-append-version="true"></script>
 }
 <div id="app"></div>

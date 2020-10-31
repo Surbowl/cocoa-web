@@ -1,42 +1,35 @@
 "use strict";
 
 const fs = require('fs')
-const path = require("path");
-const webpack = require("webpack");
+const path = require('path');
+const webpack = require('webpack');
 
-const { VueLoaderPlugin } = require("vue-loader");
+const { VueLoaderPlugin } = require('vue-loader');
 
 const RemovePlugin = require('remove-files-webpack-plugin');
-const CompressionPlugin = require('compression-webpack-plugin');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 // Custom variables
 let isProduction = false;
-const applicationBasePath = "./VueApp/";
+const applicationBasePath = './VueApp/';
 
 // We search for app.js or app.ts files inside VueApp/{miniSpaName} folder and make those as entries. Convention over configuration
 var appEntryFiles = {}
 fs.readdirSync(applicationBasePath).forEach(function (name) {
-
     let spaEntryPoint = applicationBasePath + name + '/app.ts'
     if (fs.existsSync(spaEntryPoint)) {
         appEntryFiles[name] = spaEntryPoint
     }
-
-    spaEntryPoint = applicationBasePath + name + '/app.js'
-    if (fs.existsSync(spaEntryPoint)) {
-        appEntryFiles[name] = spaEntryPoint
-    }
-
 })
 
 // Add main global.scss file with Bulma(or any other source by choice)
-appEntryFiles["vendor"] = [
-    path.resolve(__dirname, "VueApp/shared/design/_layout.scss"),
+appEntryFiles['vendor'] = [
+    path.resolve(__dirname, 'VueApp/shared/design/_layout.scss'),
 ]
 
 module.exports = function (env, argv) {
-
     if (argv.mode === "production") {
         isProduction = true;
     }
@@ -187,11 +180,12 @@ module.exports = function (env, argv) {
                 }
             ]
         },
+        optimization: {
+            minimizer: [
+            ]
+        },
         plugins: [
             new VueLoaderPlugin(),
-            new MiniCssExtractPlugin({
-                filename: "css/[name]/main.css"
-            }),
             new webpack.DefinePlugin({
                 "process.env": {
                     NODE_ENV: isProduction ? '"production"' : '""'
@@ -202,10 +196,22 @@ module.exports = function (env, argv) {
                 Vue: ["vue/dist/vue.esm.js", "default"]
             }),
             new webpack.HotModuleReplacementPlugin(),
-            new CompressionPlugin({
-                test: /\.js$|\.css$|\.html$/,
-                filename: "[path][base].gz[query]",
-                algorithm: "gzip"
+            new UglifyJsPlugin({
+                cache: true,
+                parallel: true,
+                sourceMap: true,
+                uglifyOptions: {
+                    compress: {
+                        // https://github.com/mishoo/UglifyJS/tree/harmony#compress-options
+                        drop_console: !isProduction
+                    }
+                }
+            }),
+            new MiniCssExtractPlugin({
+                filename: "css/[name]/main.css"
+            }),
+            new OptimizeCSSAssetsPlugin({
+                // https://github.com/NMFR/optimize-css-assets-webpack-plugin#configuration
             }),
             new RemovePlugin({
                 before: {
