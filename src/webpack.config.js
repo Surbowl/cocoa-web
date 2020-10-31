@@ -180,10 +180,6 @@ module.exports = function (env, argv) {
                 }
             ]
         },
-        optimization: {
-            minimizer: [
-            ]
-        },
         plugins: [
             new VueLoaderPlugin(),
             new webpack.DefinePlugin({
