@@ -1,5 +1,8 @@
 ﻿<template>
     <div>
+        <!--Float Down Arrow-->
+        <div id="floatDownArrowDiv" class="has-text-centered is-size-5"><span class="icon-chevron-down" v-scroll-to="'#_aboutMe'"></span></div>
+
         <!--NAVBAR-->
         <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation"
              :class="{'has-background-white' : (overHalfScreen || navbarBurgersIsActive)}">
@@ -13,17 +16,17 @@
             <div id="navbarBasicExample" class="navbar-menu"
                  :class="{'is-active' : navbarBurgersIsActive}">
                 <div class="navbar-end" data-aos="fade-left" aos-once="true">
-                    <a class="navbar-item has-underline">关于我</a>
-                    <a class="navbar-item has-underline">项目</a>
-                    <a class="navbar-item has-underline">简历</a>
-                    <a class="navbar-item has-underline">Api</a>
+                    <a class="navbar-item has-underline" v-scroll-to="'#_aboutMe'">关于我</a>
+                    <a class="navbar-item has-underline" v-scroll-to="'#_findMe'">社交</a>
                     <!--desktop-->
-                    <a id="contactBtn_1" v-show="!overHalfScreen" class="navbar-item has-underline is-hidden-touch">Say Hello</a>
-                    <a id="contactBtn_2" v-show="overHalfScreen" class="navbar-item is-hidden-touch jump-in">
-                        <button class="button is-primary is-rounded"><span>Hello&nbsp;<span role="img" aria-label="emoji">👋</span></span></button>
+                    <a id="contactBtn_1" class="navbar-item has-underline is-hidden-touch" v-show="!overHalfScreen" v-scroll-to="'#_contact'">打招呼</a>
+                    <a id="contactBtn_2" class="navbar-item is-hidden-touch jump-in" v-show="overHalfScreen">
+                        <button class="button is-primary is-rounded" v-scroll-to="'#_contact'">
+                            <span>Hello&nbsp;<span role="img" aria-label="emoji">👋</span></span>
+                        </button>
                     </a>
                     <!--touch-->
-                    <a class="navbar-item has-underline is-hidden-desktop">Say Hello</a>
+                    <a class="navbar-item has-underline is-hidden-desktop" v-scroll-to="'#_contact'">打招呼</a>
                 </div>
             </div>
         </nav>
@@ -43,7 +46,7 @@
                     <div class="is-float-text">
                         <span class="has-text-grey-dark is-size-5">Nice to see you&thinsp;~</span>
                     </div>
-                    <a class="button is-primary is-rounded is-medium gap-top">
+                    <a class="button is-primary is-rounded is-medium gap-top" v-scroll-to="'#_contact'">
                         <span>Hello&nbsp;<span role="img" aria-label="emoji">👋</span></span>
                     </a>
                 </div>
@@ -62,8 +65,8 @@
         </div>
 
         <!--ABOUT ME-->
-        <section class="section">
-            <div class="columns">
+        <section id="_aboutMe" class="section">
+            <div class="columns about-me-div">
                 <div class="column is-4 is-offset-1 has-text-centered-mobile has-text-left-tablet" data-aos="fade-up" aos-once="true">
                     <div class="field"><span class="is-size-3 has-shadow-blue">&nbsp;关于我&nbsp;</span></div>
                     <span class="gap-top">
@@ -76,43 +79,47 @@
                         <label onclick="alert('大师球！')">欢迎大家前来捕获</label>
                     </span>
                 </div>
-                <div class="column is-5 is-offset-1 no-overflow-x">
-                    <div class="box has-text-centered" data-aos="zoom-in-left" aos-once="true">
-                        <span class="is-size-2" role="img" aria-label="emoji">👨‍💻</span>
-                        <div class="columns is-centered">
-                            <div class="column is-four-fifths">
-                                <div class="field gap-top"><span class="is-size-5">Languages</span></div>
-                                <div class="field">
-                                    <div class="tags is-centered">
-                                        <span class="tag">C#</span><span class="tag">C/C++</span><span class="tag">SQL</span><span class="tag">TypeScript</span><span class="tag">JavaScript</span><span class="tag">Sass</span>
-                                    </div>
-                                </div>
-                                <div class="field gap-top"><span class="is-size-5">Frameworks</span></div>
-                                <div class="field">
-                                    <div class="tags is-centered">
-                                        <span class="tag">.NET</span><span class="tag">Vue</span><span class="tag">Element</span><span class="tag">Bulma</span>
-                                    </div>
-                                </div>
-                                <div class="field gap-top"><span class="is-size-5">Tools</span></div>
-                                <div class="field">
-                                    <div class="tags is-centered">
-                                        <span class="tag">VS</span><span class="tag">dnSpy</span><span class="tag">Dev-C++</span><span class="tag">HBuilder</span>
-                                        <span class="tag">Docker</span><span class="tag">Node.js</span><span class="tag">git</span>
-                                    </div>
-                                </div>
-                                <span class="gap-top"></span>
-                            </div>
-                        </div>
+                <div class="column is-5 is-offset-1">
+                    <div data-aos="zoom-in-left" aos-once="true">
+                        <skills-box></skills-box>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!--CONTACT-->
+        <section id="_contact" class="section">
+            <div class="columns is-centered">
+                <div class="column is-two-fifths has-text-centered">
+                    <div class="field" data-aos="fade-up" aos-once="true">
+                        <span class="is-size-3 has-shadow-green">&nbsp;Say&nbsp;Hello</span><br /><br />
+                    </div>
+                    <div data-aos="fade-up" aos-once="true">
+                        <message-board></message-board>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--FIND ME-->
+        <section id="_findMe" class="section">
+            <div class="columns is-centered">
+                <div class="column is-three-fifths has-text-centered" data-aos="fade-up" aos-once="true">
+                    <div class="field" data-aos="fade-up" aos-once="true">
+                        <span class="is-size-3 has-shadow-yellow">Find&nbsp;Me</span><br /><br />
+                    </div>
+                    <social-buttons></social-buttons>
+                    <span class="gap-top"></span>
+                </div>
+            </div>
+        </section>
+
+        <!--FOOTER-->
         <footer class="footer">
             <div class="content has-text-centered">
                 <p id="footerInfo">
                     <span>
-                        🚀&thinsp;Powered&nbsp;by&nbsp;<a class="has-text-black" href="https://dotnet.microsoft.com/download/dotnet/5.0" target="_blank"><u>.NET&nbsp;5.0.0-rc.2</u></a>
+                        <span role="img" aria-label="emoji">🚀</span>&thinsp;Powered&nbsp;by&nbsp;<a class="has-text-black" href="https://dotnet.microsoft.com/download/dotnet/5.0" target="_blank"><u>.NET&nbsp;5.0.0-rc.2</u></a>
                         <br />
                     </span>
                     <span v-show="showBackgroundImg">
@@ -124,7 +131,7 @@
                         <br />
                     </span>
                     <span>
-                        <a class="has-text-grey-dark is-size-7" href="http://www.beian.miit.gov.cn/">闽ICP备xxxxxxx号-x</a>
+                        <a class="has-text-grey-dark is-size-7" href="http://www.beian.miit.gov.cn/">闽ICP备19009575号-1</a>
                         <br />
                     </span>
                 </p>
@@ -135,18 +142,28 @@
 
 <script lang="ts">
     import { Vue, Component } from 'vue-property-decorator';
-    import bgImg from './assets/bg.jpg';
+    import * as Aos from 'aos';
+
+    import SkillsBox from '@/home/components/SkillsBox.vue'
+    import MessageBoard from '@/home/components/MessageBoard.vue'
+    import SocialButtons from '@/home/components/SocialButtons.vue'
+
+    import BgImg from '@/home/assets/bg.jpg';
 
     @Component({
-        name: 'App'
+        name: 'App',
+        components: {
+            SkillsBox,
+            MessageBoard,
+            SocialButtons
+        }
     })
     export default class App extends Vue {
         screenHeight: number = 0;
         screenHeightHalf: number = 0;
         currentHeight: number = 0;
         showBackgroundImg: boolean = false;
-        // https://bulma.io/documentation/components/navbar/
-        navbarBurgersIsActive: boolean = false;
+        navbarBurgersIsActive: boolean = false;  // https://bulma.io/documentation/components/navbar/
 
         mounted(): void {
             this.onResize();
@@ -164,7 +181,7 @@
 
             // set body background image if screen width than 768
             if (this.showBackgroundImg) {
-                document.body.style.background = `#CED7DC url(${bgImg}) no-repeat fixed right`; //color url() repeat attachment position
+                document.body.style.background = `#CED7DC url(${BgImg}) no-repeat fixed right`; //color url() repeat attachment position
                 document.body.style.backgroundSize = 'cover';
             }
         }
@@ -181,11 +198,84 @@
         }
     }
 
-    import * as Aos from 'aos';
     Aos.init();
 </script>
 
 <style scoped lang="scss">
-    @import './design/app.scss';
     @import '~aos/dist/aos.css';
+
+    #floatDownArrowDiv {
+        width: 100%;
+        position: absolute;
+        bottom: 24px;
+        animation: float 2.5s ease infinite;
+    }
+
+    @keyframes float {
+        0%, 100% {
+            -webkit-transform: translateY(0);
+            transform: translateY(0);
+        }
+
+        50% {
+            -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+        }
+    }
+
+    .hello-div {
+        position: relative;
+        top: 26%;
+        width: 65%;
+        margin: auto;
+    }
+
+    .about-me-div{
+        margin-top: 4rem;
+    }
+
+    /* cover global style */
+    .navbar {
+        transition: background-color .2s ease-in-out;
+        background-color: transparent;
+        background-image: none;
+    }
+
+        .navbar .navbar-item:hover {
+            background-color: transparent;
+        }
+
+        /* prevent box-shadow from spilling navbar div*/
+        .navbar .button:hover {
+            box-shadow: 0 4px 6px 0 rgba(0,0,0,.1);
+        }
+
+    .navbar-link:not(.is-arrowless)::after {
+        border-color: #4A4A4A;
+    }
+
+    .navbar-link:hover {
+        color: #4A4A4A;
+    }
+
+    .navbar-end {
+        overflow: hidden;
+    }
+
+    @media screen and (min-width: 1024px) {
+        .navbar .has-underline:hover {
+            border-bottom: 1px solid;
+            color: #4A4A4A;
+        }
+    }
+
+    @media screen and (max-width: 1023px) {
+        .navbar-menu {
+            box-shadow: 0 6px 6px rgba(10,10,10,.1);
+        }
+    }
+
+    .section {
+        background-color: white;
+    }
 </style>

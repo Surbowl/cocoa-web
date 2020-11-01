@@ -201,7 +201,10 @@ module.exports = function (env, argv) {
                 uglifyOptions: {
                     compress: {
                         // https://github.com/mishoo/UglifyJS/tree/harmony#compress-options
-                        drop_console: !isProduction
+                        drop_console: isProduction
+                    },
+                    output: {
+                        comments: false
                     }
                 }
             }),

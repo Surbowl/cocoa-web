@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -11,13 +10,12 @@ namespace Cocoa.Web
     {
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddHttpClient();
-
             services.Configure<RouteOptions>(options => options.LowercaseUrls = true);
 
             services.AddResponseCompression();
 
-            services.AddControllersWithViews();
+            services.AddControllersWithViews()
+                    .AddNewtonsoftJson();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
