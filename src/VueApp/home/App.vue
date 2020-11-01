@@ -119,7 +119,7 @@
             <div class="content has-text-centered">
                 <p id="footerInfo">
                     <span>
-                        <span role="img" aria-label="emoji">🚀</span>&thinsp;Powered&nbsp;by&nbsp;<a class="has-text-black" href="https://dotnet.microsoft.com/download/dotnet/5.0" target="_blank"><u>.NET&nbsp;5.0.0-rc.2</u></a>
+                        <span role="img" aria-label="emoji">🚀</span>&thinsp;Powered&nbsp;by&nbsp;.NET&nbsp;5.0.0-rc.2
                         <br />
                     </span>
                     <span v-show="showBackgroundImg">
