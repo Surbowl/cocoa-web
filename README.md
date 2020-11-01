@@ -1,7 +1,6 @@
 # Cocoa-web
-🚧 __Unfinished 当前尚未完成__
 
-cocoa 是一个敲可爱的 mini 个人网站，您可以利用它开发自己的社交或求职网站
+我的个人网站，欢迎 Fork ~
 
 👉 [Demo](https://surbowl.online)
 
