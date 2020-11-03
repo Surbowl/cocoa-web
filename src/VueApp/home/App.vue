@@ -108,7 +108,9 @@
                     <div class="field" data-aos="fade-up" aos-once="true">
                         <span class="is-size-3 has-shadow-yellow">Find&nbsp;Me</span><br /><br />
                     </div>
-                    <social-buttons></social-buttons>
+                    <div data-aos="fade-up" aos-once="true">
+                        <social-buttons></social-buttons>
+                    </div>
                     <span class="gap-top"></span>
                 </div>
             </div>
