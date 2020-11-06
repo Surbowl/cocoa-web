@@ -1,6 +1,5 @@
 # Cocoa-web
-
-我的个人网站，欢迎 Fork ~
+My personal website, based on .NET 5.0, Vue 2.6 and Bulma.
 
 👉 [Demo](https://surbowl.online)
 
