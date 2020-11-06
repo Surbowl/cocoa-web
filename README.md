@@ -40,6 +40,3 @@ My personal website, based on .NET 5.0, Vue 2.6 and Bulma.
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](/LICENSE)
 
 Copyright (c) 2020-Present [杰文](https://github.com/Surbowl)
-
-## Other
-current branch base on [danijelh](https://github.com/danijelh) / [AspNetCore.Vue.TypeScript.Template v2.0.0](https://github.com/danijelh/aspnetcore-vue-typescript-template/releases/tag/v2.0.0) ❤
