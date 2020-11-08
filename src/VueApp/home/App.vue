@@ -138,7 +138,7 @@
                         <br />
                     </span>
                     <span>
-                        <a class="has-text-grey-dark is-size-7" href="http://www.beian.miit.gov.cn/">闽ICP备19009575号-1</a>
+                        <a class="has-text-grey-dark is-size-7" href="http://www.beian.miit.gov.cn/">闽ICP备xxxxxxxx号-1</a>
                         <br />
                     </span>
                 </p>
