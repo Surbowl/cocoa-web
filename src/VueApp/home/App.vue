@@ -7,7 +7,9 @@
         <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation"
              :class="{'has-background-white' : (overHalfScreen || navbarBurgersIsActive)}">
             <div class="navbar-brand">
-                <a class="navbar-item"><img src="https://vuejs.org/images/logo.png" height="40"></a>
+                <a class="navbar-item" v-scroll-to="'#_hello'">
+                    <img src="https://vuejs.org/images/logo.png" height="40">
+                </a>
                 <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample"
                    @click="onNavbarBurgersClick" :class="{'is-active' : navbarBurgersIsActive}">
                     <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
@@ -32,35 +34,37 @@
         </nav>
 
         <!--HELLO-->
-        <!--desktop-->
-        <div class="columns is-hidden-mobile" style="margin:0;"
-             :style="{height: screenHeight + 'px'}">
-            <div class="column is-half has-background-white">
-                <div class="hello-div fade-jump-in">
-                    <figure class="image is-48x48">
-                        <img src="./assets/emoji-cool.gif">
-                    </figure>
-                    <div class="is-float-text">
-                        <span class="has-text-grey-darker is-size-2">Hi，我是杰文</span>
+        <div id="_hello">
+            <!--desktop-->
+            <div class="columns is-hidden-mobile" style="margin:0;"
+                 :style="{height: screenHeight + 'px'}">
+                <div class="column is-half has-background-white">
+                    <div class="hello-div fade-jump-in">
+                        <figure class="image is-48x48">
+                            <img src="./assets/emoji-cool.gif">
+                        </figure>
+                        <div class="is-float-text">
+                            <span class="has-text-grey-darker is-size-2">Hi，我是杰文</span>
+                        </div>
+                        <div class="is-float-text">
+                            <span class="has-text-grey-dark is-size-5">Nice to see you&thinsp;~</span>
+                        </div>
+                        <a class="button is-primary is-rounded is-medium gap-top" v-scroll-to="'#_contact'">
+                            <span>Hello&nbsp;<span role="img" aria-label="emoji">👋</span></span>
+                        </a>
                     </div>
-                    <div class="is-float-text">
-                        <span class="has-text-grey-dark is-size-5">Nice to see you&thinsp;~</span>
-                    </div>
-                    <a class="button is-primary is-rounded is-medium gap-top" v-scroll-to="'#_contact'">
-                        <span>Hello&nbsp;<span role="img" aria-label="emoji">👋</span></span>
-                    </a>
                 </div>
             </div>
-        </div>
-        <!--touch-->
-        <div class="is-hidden-tablet has-background-white" style="margin:0;"
-             :style="{height: screenHeight + 'px'}">
-            <div class="hello-div fade-jump-in has-text-centered">
-                <figure class="image is-48x48 is-inline-block">
-                    <img src="./assets/emoji-cool.gif">
-                </figure>
-                <div><span class="has-text-grey-darker is-size-2">Hi，我是杰文</span></div>
-                <div><span class="has-text-grey-dark is-size-5">Nice to see you&thinsp;~</span></div>
+            <!--touch-->
+            <div class="is-hidden-tablet has-background-white" style="margin:0;"
+                 :style="{height: screenHeight + 'px'}">
+                <div class="hello-div fade-jump-in has-text-centered">
+                    <figure class="image is-48x48 is-inline-block">
+                        <img src="./assets/emoji-cool.gif">
+                    </figure>
+                    <div><span class="has-text-grey-darker is-size-2">Hi，我是杰文</span></div>
+                    <div><span class="has-text-grey-dark is-size-5">Nice to see you&thinsp;~</span></div>
+                </div>
             </div>
         </div>
 
@@ -87,20 +91,6 @@
             </div>
         </section>
 
-        <!--CONTACT-->
-        <section id="_contact" class="section">
-            <div class="columns is-centered">
-                <div class="column is-two-fifths has-text-centered">
-                    <div class="field" data-aos="fade-up" aos-once="true">
-                        <span class="is-size-3 has-shadow-green">&nbsp;Say&nbsp;Hello</span><br /><br />
-                    </div>
-                    <div data-aos="fade-up" aos-once="true">
-                        <message-board></message-board>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!--FIND ME-->
         <section id="_findMe" class="section">
             <div class="columns is-centered">
@@ -110,6 +100,21 @@
                     </div>
                     <div data-aos="fade-up" aos-once="true">
                         <social-buttons></social-buttons>
+                    </div>
+                    <span class="gap-top"></span>
+                </div>
+            </div>
+        </section>
+
+        <!--CONTACT-->
+        <section id="_contact" class="section">
+            <div class="columns is-centered">
+                <div class="column is-two-fifths has-text-centered">
+                    <div class="field" data-aos="fade-up" aos-once="true">
+                        <span class="is-size-3 has-shadow-green">&nbsp;Say&nbsp;Hello</span><br /><br />
+                    </div>
+                    <div data-aos="fade-up" aos-once="true">
+                        <message-board></message-board>
                     </div>
                     <span class="gap-top"></span>
                 </div>
