@@ -83,7 +83,8 @@
                         <label onclick="alert('大师球！')">欢迎大家前来捕获</label>
                     </span>
                 </div>
-                <div class="column is-5 is-offset-1">
+                <!--AOS causing horizontal scroll bar to appear https://github.com/michalsnik/aos/issues/416 so add style="overflow-x:hidden;"-->
+                <div class="column is-5 is-offset-1" style="overflow-x:hidden;">
                     <div data-aos="zoom-in-left" aos-once="true">
                         <skills-box></skills-box>
                     </div>
