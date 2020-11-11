@@ -72,7 +72,9 @@
         <section id="_aboutMe" class="section">
             <div class="columns about-me-div">
                 <div class="column is-4 is-offset-1 has-text-centered-mobile has-text-left-tablet" data-aos="fade-up" aos-once="true">
-                    <div class="field"><span class="is-size-3 has-shadow-blue">&nbsp;关于我&nbsp;</span></div>
+                    <div class="field">
+                        <span class="is-size-3 has-shadow-blue">&nbsp;关于我&nbsp;</span>
+                    </div>
                     <span class="gap-top">
                         📍&nbsp;生长于福建省的野生后端
                         <br />
@@ -95,7 +97,7 @@
         <!--FIND ME-->
         <section id="_findMe" class="section">
             <div class="columns is-centered">
-                <div class="column is-three-fifths has-text-centered" data-aos="fade-up" aos-once="true">
+                <div class="column is-three-fifths has-text-centered">
                     <div class="field" data-aos="fade-up" aos-once="true">
                         <span class="is-size-3 has-shadow-yellow">Find&nbsp;Me</span><br /><br />
                     </div>
@@ -238,7 +240,7 @@
         margin: auto;
     }
 
-    .about-me-div{
+    .about-me-div {
         margin-top: 4rem;
     }
 
