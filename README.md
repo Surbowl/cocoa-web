@@ -25,9 +25,11 @@ My personal website, based on .NET 5.0, Vue 2.6 and Bulma.
 - [Node.js](https://nodejs.org)
 
 ## Build
-#### Step 1: Install frontend packages
+#### Step 1: Install front end packages
     npm install
-#### Step 2: Build & run app 🚀
+#### Step 2: Builds front end
+    npm run build:dev
+#### Step 3: Build & run app 🚀
     dotnet run
 
 ## Development, publishing and available commands
