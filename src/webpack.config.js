@@ -12,7 +12,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 // Custom variables
-let isProduction = false;
+let isProduction = true;
 const applicationBasePath = './VueApp/';
 
 // We search for app.js or app.ts files inside VueApp/{miniSpaName} folder and make those as entries. Convention over configuration
@@ -120,6 +120,7 @@ module.exports = function (env, argv) {
                             loader: 'url-loader',
                             options: {
                                 limit: 4096,
+                                esModule: false,
                                 fallback: {
                                     loader: 'file-loader',
                                     options: {

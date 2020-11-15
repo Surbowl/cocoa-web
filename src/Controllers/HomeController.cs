@@ -1,9 +1,10 @@
-﻿using Cocoa.Web.Entities;
-using Cocoa.Web.Models;
+﻿using Cocoa.Web.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Cocoa.Web.Controllers
@@ -14,7 +15,7 @@ namespace Cocoa.Web.Controllers
 
         public HomeController(ILogger<HomeController> logger)
         {
-            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+            _logger = logger;
         }
 
         /// <summary>
@@ -27,35 +28,20 @@ namespace Cocoa.Web.Controllers
         }
 
         /// <summary>
-        /// Message Api
+        /// Message Board Api
         /// </summary>
         /// <param name="message"></param>
         /// <returns></returns>
         [HttpPost]
         [Route("api/[controller]/[action]")]
-        public async Task<JsonResult> PostMessage([FromBody] MessageDto message )
+        public async Task<JsonResult> PostMessage([FromBody] MessageModel message)
         {
-            if (message == null)
+            return Json(new
             {
-                return Json(new ApiResult(400, "Bad request"));
-            }
-            if (string.IsNullOrWhiteSpace(message.Name))
-            {
-                return Json(new ApiResult(401, "请输入昵称"));
-            }
-            if (string.IsNullOrWhiteSpace(message.Content))
-            {
-                return Json(new ApiResult(401, "请输入内容"));
-            }
-
-            // Process message here
-            _logger.LogInformation($"Receive new message:\n${message}");
-#if RELEASE
-            throw new NotImplementedException();
-#endif
-            //
-
-            return Json(new ApiResult(200, "发送成功"));
+                Code = 500,
+                Message = "Not Implemented Exception",
+                Countdown = 20
+            });
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

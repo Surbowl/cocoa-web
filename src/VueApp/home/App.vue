@@ -8,7 +8,7 @@
              :class="{'has-background-white' : (overHalfScreen || navbarBurgersIsActive)}">
             <div class="navbar-brand">
                 <a class="navbar-item" v-scroll-to="'#_hello'">
-                    <img src="https://vuejs.org/images/logo.png" height="40">
+                    <img src="./assets/nav.png" height="40">
                 </a>
                 <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample"
                    @click="onNavbarBurgersClick" :class="{'is-active' : navbarBurgersIsActive}">
@@ -72,9 +72,7 @@
         <section id="_aboutMe" class="section">
             <div class="columns about-me-div">
                 <div class="column is-4 is-offset-1 has-text-centered-mobile has-text-left-tablet" data-aos="fade-up" aos-once="true">
-                    <div class="field">
-                        <span class="is-size-3 has-shadow-blue">&nbsp;关于我&nbsp;</span>
-                    </div>
+                    <div class="field"><span class="is-size-3 has-shadow-blue">&nbsp;关于我&nbsp;</span></div>
                     <span class="gap-top">
                         📍&nbsp;生长于福建省的野生后端
                         <br />
@@ -129,7 +127,7 @@
             <div class="content has-text-centered">
                 <p id="footerInfo">
                     <span>
-                        <span role="img" aria-label="emoji">🚀</span>&thinsp;Powered&nbsp;by&nbsp;.NET&nbsp;5.0.0-rc.2
+                        <span role="img" aria-label="emoji">🚀</span>&thinsp;Powered&nbsp;by&nbsp;{{runtimeInfo.framework}}&nbsp;on&nbsp;Docker
                         <br />
                     </span>
                     <span v-show="showBackgroundImg">
@@ -141,7 +139,7 @@
                         <br />
                     </span>
                     <span>
-                        <a class="has-text-grey-dark is-size-7" href="http://www.beian.miit.gov.cn/">闽ICP备xxxxxxxx号-1</a>
+                        <a class="has-text-grey-dark is-size-7" href="http://www.beian.miit.gov.cn/">闽ICP备19009575号-1</a>
                         <br />
                     </span>
                 </p>
@@ -174,6 +172,7 @@
         currentHeight: number = 0;
         showBackgroundImg: boolean = false;
         navbarBurgersIsActive: boolean = false;  // https://bulma.io/documentation/components/navbar/
+        runtimeInfo: any = _runtimeInfo;
 
         mounted(): void {
             this.onResize();
@@ -236,7 +235,7 @@
     .hello-div {
         position: relative;
         top: 26%;
-        width: 65%;
+        width: 70%;
         margin: auto;
     }
 

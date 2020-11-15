@@ -1,3 +1,5 @@
+using System;
+
 namespace Cocoa.Web.Models
 {
     public class ErrorViewModel

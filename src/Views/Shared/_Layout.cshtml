@@ -4,7 +4,12 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>@ViewData["Title"] - Cocoa</title>
+    <meta property="og:site_name" content="Surbowl">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://surbowl.online/og-image.gif">
+    <meta property="og:title" content="@ViewData["OgTitle"]">
+    <meta property="og:description" content="@ViewData["OgDescription"]">
+    <title>@ViewData["Title"] - Surbowl</title>
     <link rel="stylesheet" href="~/dist/css/vendor/main.css" asp-append-version="true" />
     @RenderSection("Styles", required: false)
 </head>

@@ -24,10 +24,17 @@
         <br />
         <div class="has-text-centered" data-aos="fade-up" aos-once="true">
             <button class="button is-primary is-rounded is-medium"
-                    :class="{'is-loading':isLoading}" @click="sendMessage">
+                    :class="{'is-loading':isLoading}" @click="sendMessage"
+                    v-show="remainingCountdown <= 0">
                 <span>
                     发送&nbsp;
                     <span role="img" aria-label="emoji">{{sended ? '📫':'📪'}}</span>
+                </span>
+            </button>
+            <button class="button is-static is-rounded is-medium"
+                    v-show="remainingCountdown > 0">
+                <span>
+                    &emsp;{{remainingCountdown}}&emsp;
                 </span>
             </button>
         </div>
@@ -56,6 +63,8 @@
         isLoading: boolean = false;
         sended: boolean = false;
 
+        remainingCountdown: number = 0;
+
         sendMessage(): void {
             this.sended = false;
             this.errorMsg = '';
@@ -78,6 +87,10 @@
                     }
                     else {
                         alert(response.data.message);
+                    }
+
+                    if (response.data.countdown > 0) {
+                        this.setCountDown(response.data.countdown as number);
                     }
                 })
                 .catch(error => {
@@ -118,6 +131,17 @@
             }
 
             return available;
+        }
+
+        // count down
+        setCountDown(seconds: number): void {
+            this.remainingCountdown = seconds;
+            let timeStop = setInterval(() => {
+                this.remainingCountdown--;
+                if (this.remainingCountdown <= 0) {
+                    clearInterval(timeStop);
+                }
+            }, 1000);
         }
 
         @Watch('name')

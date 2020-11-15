@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.30615.102
+VisualStudioVersion = 16.0.30711.63
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cocoa.Web", "Cocoa.Web.csproj", "{CFF4B92C-D5E8-4C15-ACE9-D9D0F142420D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cocoa.Web", "Cocoa.Web.csproj", "{7B877677-785E-415D-9D44-2AD94E0F10B6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{CFF4B92C-D5E8-4C15-ACE9-D9D0F142420D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CFF4B92C-D5E8-4C15-ACE9-D9D0F142420D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CFF4B92C-D5E8-4C15-ACE9-D9D0F142420D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CFF4B92C-D5E8-4C15-ACE9-D9D0F142420D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B877677-785E-415D-9D44-2AD94E0F10B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B877677-785E-415D-9D44-2AD94E0F10B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B877677-785E-415D-9D44-2AD94E0F10B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B877677-785E-415D-9D44-2AD94E0F10B6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {6306B7A3-976F-4CDF-A6D4-97953F747B85}
+		SolutionGuid = {C8A46412-BE6D-4DF6-9FA2-C88275EE5C0A}
 	EndGlobalSection
 EndGlobal

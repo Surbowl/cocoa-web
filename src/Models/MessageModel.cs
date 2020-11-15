@@ -1,8 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace Cocoa.Web.Entities
+namespace Cocoa.Web.Models
 {
-    public record MessageDto
+    public record MessageModel
     {
         public string Name { get; init; } = string.Empty;
 

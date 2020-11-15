@@ -16,7 +16,7 @@
                 </div>
                 <div class="field">
                     <div class="tags is-centered">
-                        <span class="tag is-float-text">ASP.NET Core</span><span class="tag is-float-text">Vue</span><span class="tag is-float-text">Element</span><span class="tag is-float-text">Bulma</span>
+                        <span class="tag is-float-text">ASP.NET Core</span><span class="tag is-float-text">Vue.js</span><span class="tag is-float-text">Element</span><span class="tag is-float-text">Bulma</span>
                     </div>
                 </div>
                 <div class="field gap-top">
@@ -25,7 +25,7 @@
                 <div class="field">
                     <div class="tags is-centered">
                         <span class="tag is-float-text">VS</span><span class="tag is-float-text">dnSpy</span><span class="tag is-float-text">Dev-C++</span><span class="tag is-float-text">HBuilder</span>
-                        <span class="tag is-float-text">Docker</span><span class="tag is-float-text">Node.js</span><span class="tag is-float-text">git</span>
+                        <span class="tag is-float-text">Docker</span><span class="tag is-float-text">Webpack</span><span class="tag is-float-text">gulp.js</span><span class="tag is-float-text">git</span>
                     </div>
                 </div>
                 <span class="gap-top"></span>
