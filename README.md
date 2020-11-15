@@ -1,5 +1,5 @@
 # Cocoa-web
-My personal website, based on .NET 5.0, Vue 2.6 and Bulma.
+My website, based on .NET 5.0, Vue 2.6 and Bulma.
 
 👉 [Demo](https://surbowl.online)
 
@@ -19,6 +19,7 @@ My personal website, based on .NET 5.0, Vue 2.6 and Bulma.
 - Bulma
 - Sass
 - Webpack
+- Docker
 
 ## Prerequisites
 - [.NET 5.0 SDK](https://dotnet.microsoft.com/download/dotnet-core)
@@ -27,9 +28,7 @@ My personal website, based on .NET 5.0, Vue 2.6 and Bulma.
 ## Build
 #### Step 1: Install front end packages
     npm install
-#### Step 2: Builds front end
-    npm run build:dev
-#### Step 3: Build & run app 🚀
+#### Step 2: Build & run app 🚀
     dotnet run
 
 ## Development, publishing and available commands
