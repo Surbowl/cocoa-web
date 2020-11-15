@@ -36,6 +36,8 @@ namespace Cocoa.Web.Controllers
         [Route("api/[controller]/[action]")]
         public async Task<JsonResult> PostMessage([FromBody] MessageModel message)
         {
+            _logger.LogInformation(message.ToString());
+
             return Json(new
             {
                 Code = 500,

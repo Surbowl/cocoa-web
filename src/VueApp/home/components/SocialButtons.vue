@@ -32,33 +32,25 @@
 
 <style scoped lang="scss">
     /* cover global button style */
-    .is-zhihu {
+    @mixin social-button($color) {
         color: #FFF !important;
-        background-color: #0085FF;
-        border-color: #0085FF;
+        background-color: $color;
+        border-color: $color;
+
+        &:hover {
+            border-color: $color;
+        }
     }
 
-        .is-zhihu:hover {
-            border-color: #0085FF;
-        }
+    .is-zhihu {
+        @include social-button(#0085FF);
+    }
 
     .is-instagram {
-        color: #FFF !important;
-        background-color: #DB2A84;
-        border-color: #DB2A84;
+        @include social-button(#DB2A84);
     }
-
-        .is-instagram:hover {
-            border-color: #DB2A84;
-        }
 
     .is-linkedin {
-        color: #FFF !important;
-        background-color: #0077B5;
-        border-color: #0077B5;
+        @include social-button(#0077B5);
     }
-
-        .is-linkedin:hover {
-            border-color: #0077B5;
-        }
 </style>

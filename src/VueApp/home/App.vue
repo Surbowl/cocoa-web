@@ -248,23 +248,27 @@
         transition: background-color .2s ease-in-out;
         background-color: transparent;
         background-image: none;
-    }
 
-        .navbar .navbar-item:hover {
+        .navbar-item:hover {
             background-color: transparent;
         }
 
         /* prevent box-shadow from spilling navbar div*/
-        .navbar .button:hover {
+        .button:hover {
             box-shadow: 0 4px 6px 0 rgba(0,0,0,.1);
         }
-
-    .navbar-link:not(.is-arrowless)::after {
-        border-color: #4A4A4A;
     }
 
-    .navbar-link:hover {
-        color: #4A4A4A;
+    $navbar-link-color: #4A4A4A;
+
+    .navbar-link {
+        &:hover {
+            color: $navbar-link-color;
+        }
+
+        &:not(.is-arrowless)::after {
+            border-color: $navbar-link-color;
+        }
     }
 
     .navbar-end {
@@ -274,7 +278,7 @@
     @media screen and (min-width: 1024px) {
         .navbar .has-underline:hover {
             border-bottom: 1px solid;
-            color: #4A4A4A;
+            color: $navbar-link-color;
         }
     }
 
