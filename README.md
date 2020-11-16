@@ -1,5 +1,5 @@
 # Cocoa-web
-My website, based on .NET 5.0, Vue 2.6 and Bulma.
+My personal website, based on .NET 5.0, Vue 2.6 and Bulma.
 
 👉 [Demo](https://surbowl.online)
 
