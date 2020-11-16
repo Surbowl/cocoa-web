@@ -3,28 +3,27 @@
         <div class="has-text-left">
             <div class="field">
                 <input v-model="name" class="form-item" type="text" placeholder="Name *">
-                <p class="help is-danger" v-show="nameErrorMsg != ''">{{nameErrorMsg}}</p>
+                <p class="help has-text-danger" v-show="nameErrorMsg != ''">{{nameErrorMsg}}</p>
             </div>
             <div class="field">
                 <input v-model="email" class="form-item" type="email" placeholder="Email (optional)">
-                <p class="help is-danger" v-show="emailErrorMsg != ''">{{emailErrorMsg}}</p>
+                <p class="help has-text-danger" v-show="emailErrorMsg != ''">{{emailErrorMsg}}</p>
             </div>
             <div class="field">
                 <input v-model="phone" class="form-item" type="tel" placeholder="Tel (optional)">
-                <p class="help is-danger" v-show="phoneErrorMsg != ''">{{phoneErrorMsg}}</p>
+                <p class="help has-text-danger" v-show="phoneErrorMsg != ''">{{phoneErrorMsg}}</p>
             </div>
             <div class="field">
                 <textarea v-model="content" class="form-item" rows="6" placeholder="Message *"></textarea>
-                <p class="help is-danger" v-show="contentErrorMsg != ''">{{contentErrorMsg}}</p>
+                <p class="help has-text-danger" v-show="contentErrorMsg != ''">{{contentErrorMsg}}</p>
             </div>
         </div>
 
-        <p class="help jump-in" v-show="sended"><br />发送成功&nbsp;<span role="img" aria-label="emoji">✔</span></p>
-        <p class="help is-danger" v-show="errorMsg != ''"><br />{{errorMsg}}</p>
+        <p class="help has-text-primary	jump-in" v-show="sended"><br />发送成功&nbsp;<span role="img" aria-label="emoji">✔</span></p>
+        <p class="help has-text-danger" v-show="errorMsg != ''"><br />{{errorMsg}}</p>
         <br />
-        <div class="has-text-centered" data-aos="fade-up" aos-once="true">
-            <button class="button is-primary is-rounded is-medium"
-                    :class="{'is-loading':isLoading}" @click="sendMessage"
+        <div class="has-text-centered">
+            <button class="button is-primary is-rounded is-medium" :class="{'is-loading':isLoading}" @click="sendMessage"
                     v-show="remainingCountdown <= 0">
                 <span>
                     发送&nbsp;
