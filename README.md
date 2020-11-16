@@ -1,5 +1,5 @@
 # Cocoa-web
-My personal website, based on .NET 5.0, Vue 2.6 and Bulma.
+My personal website, based on [aspnetcore-vue-typescript-template](https://github.com/danijelh/aspnetcore-vue-typescript-template).
 
 👉 [Demo](https://surbowl.online)
 
