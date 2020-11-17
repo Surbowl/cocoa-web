@@ -4,12 +4,15 @@ FROM mcr.microsoft.com/dotnet/aspnet:5.0-buster-slim AS base
 WORKDIR /app
 EXPOSE 80
 
-FROM node:lts-buster-slim AS build-vue
+FROM node:lts-buster-slim AS npm-install
 WORKDIR /src
-COPY ["package*.json", "tsconfig.json", "*.js", "*.ts", "./"]
+COPY package*.json ./
+RUN npm install
+
+FROM npm-install AS build-vue
+COPY ["tsconfig.json", "*.js", "*.ts", "./"]
 COPY ./VueApp ./VueApp
-RUN npm install \
-    && npm run build:prod
+RUN npm run build:prod
 
 FROM mcr.microsoft.com/dotnet/sdk:5.0-buster-slim AS build-dotnet
 WORKDIR /src
