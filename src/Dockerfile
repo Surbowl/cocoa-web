@@ -29,5 +29,5 @@ RUN dotnet publish "Cocoa.Web.csproj" -c Docker -o /app/publish
 FROM base AS final
 WORKDIR /app
 COPY --from=publish-dotnet /app/publish .
-ENV ASPNETCORE_ENVIRONMENT="ProductionWithOutSsl"
+ENV ASPNETCORE_ENVIRONMENT="ProductionWithoutSsl"
 ENTRYPOINT ["dotnet", "Cocoa.Web.dll"]
