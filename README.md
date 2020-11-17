@@ -30,7 +30,7 @@ My personal website, based on [aspnetcore-vue-typescript-template](https://githu
 #### Step 2: Build & run app 🚀
     dotnet run
 
-## Or Build docker image
+## Or build docker image
     docker build -t cocoa-web .
 See [Dockerfile](https://github.com/Surbowl/cocoa-web/blob/5.0.0/src/Dockerfile) for more info.
 
