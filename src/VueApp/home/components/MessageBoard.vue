@@ -6,11 +6,11 @@
                 <p class="help has-text-danger" v-show="nameErrorMsg != ''">{{nameErrorMsg}}</p>
             </div>
             <div class="field">
-                <input v-model="email" class="form-item" type="email" placeholder="Email (optional)">
+                <input v-model="email" class="form-item" type="email" placeholder="Email">
                 <p class="help has-text-danger" v-show="emailErrorMsg != ''">{{emailErrorMsg}}</p>
             </div>
             <div class="field">
-                <input v-model="phone" class="form-item" type="tel" placeholder="Tel (optional)">
+                <input v-model="phone" class="form-item" type="tel" placeholder="Tel">
                 <p class="help has-text-danger" v-show="phoneErrorMsg != ''">{{phoneErrorMsg}}</p>
             </div>
             <div class="field">
