@@ -44,12 +44,20 @@ namespace Cocoa.Web
                 app.UseResponseCompression();
 
                 app.UseExceptionHandler("/Home/Error");
+            }
 
+            if (env.IsProduction())
+            {
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
 
                 app.UseHttpsRedirection();
             }
+
+            //if (env.EnvironmentName == "ProductionWithOutSsl")
+            //{
+
+            //}
 
             app.UseStaticFiles();
 

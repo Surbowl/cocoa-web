@@ -22,7 +22,7 @@
       "launchBrowser": true,
       "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}",
       "publishAllPorts": true,
-      "useSSL": true
+      "useSSL": false
     },
     "IIS Express": {
       "commandName": "IISExpress",

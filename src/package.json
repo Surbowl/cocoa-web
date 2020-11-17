@@ -6,11 +6,11 @@
   "author": "Surbowl",
   "homepage": "https://github.com/Surbowl/cocoa-web",
   "repository": "https://github.com/Surbowl/cocoa-web.git",
+  "description": "https://github.com/Surbowl/cocoa-web",
   "scripts": {
     "dev": "./node_modules/.bin/webpack-cli --mode development --watch --config webpack.config.js --display-error-details",
     "build:dev": "./node_modules/.bin/webpack-cli --mode development --config webpack.config.js",
     "build:prod": "./node_modules/.bin/webpack-cli --mode production --config webpack.config.js",
-    "publish": "npm install && ./node_modules/.bin/webpack-cli --mode production --config webpack.config.js && dotnet publish --configuration Release",
     "start": "npm run dev",
     "prod": "webpack --mode production"
   },

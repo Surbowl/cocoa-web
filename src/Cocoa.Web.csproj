@@ -48,4 +48,9 @@
     <Exec Command="npm run build:prod" />
   </Target>
 
+	<Target Name="Docker" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Docker'">
+
+		<Error Condition="!Exists('wwwroot/dist')" Text="The wwwroot/dist folder does not exist, Please check whether the VueApp is compiled first." />
+	</Target>
+
 </Project>
