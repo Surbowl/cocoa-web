@@ -31,7 +31,7 @@ My personal website, based on [aspnetcore-vue-typescript-template](https://githu
     dotnet run
 
 ## Or build docker image
-    docker build -t cocoa-web .
+    docker build -t cocoa-web:5.0 .
 See [Dockerfile](https://github.com/Surbowl/cocoa-web/blob/5.0.0/src/Dockerfile) for more info.
 
 ## Development, publishing and available commands
