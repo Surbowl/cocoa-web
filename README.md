@@ -25,12 +25,12 @@ My personal website, based on [aspnetcore-vue-typescript-template](https://githu
 #### Prerequisites
 - [.NET 5.0 SDK](https://dotnet.microsoft.com/download/dotnet-core)
 - [Node.js](https://nodejs.org)
-#### Step 1: Install front end packages
+#### Step 1: Install front-end packages
     npm install
 #### Step 2: Build & Run app 🚀
     dotnet run
 
-## Or build Docker image
+## Or build Docker Image
     docker build -t cocoa-web:5.0 .
 See [Dockerfile](https://github.com/Surbowl/cocoa-web/blob/5.0.0/src/Dockerfile) for more info.
 
