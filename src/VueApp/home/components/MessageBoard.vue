@@ -10,16 +10,12 @@
                 <p class="help has-text-danger" v-show="emailErrorMsg != ''">{{emailErrorMsg}}</p>
             </div>
             <div class="field">
-                <input v-model="phone" class="form-item" type="tel" placeholder="Tel">
-                <p class="help has-text-danger" v-show="phoneErrorMsg != ''">{{phoneErrorMsg}}</p>
-            </div>
-            <div class="field">
-                <textarea v-model="content" class="form-item" rows="6" placeholder="Message *"></textarea>
+                <textarea v-model="content" class="form-item" rows="8" placeholder="Message *"></textarea>
                 <p class="help has-text-danger" v-show="contentErrorMsg != ''">{{contentErrorMsg}}</p>
             </div>
         </div>
 
-        <p class="help has-text-primary	jump-in" v-show="sended"><br />发送成功&nbsp;<span role="img" aria-label="emoji">✔</span></p>
+        <p class="help jump-in" v-show="sended"><br />发送成功&nbsp;<span role="img" aria-label="emoji">😉</span></p>
         <p class="help has-text-danger" v-show="errorMsg != ''"><br />{{errorMsg}}</p>
         <br />
         <div class="has-text-centered">
@@ -50,12 +46,10 @@
     export default class MessageBoard extends Vue {
         name: string = '';
         email: string = '';
-        phone: string = '';
         content: string = '';
 
         nameErrorMsg: string = '';
         emailErrorMsg: string = '';
-        phoneErrorMsg: string = '';
         contentErrorMsg: string = '';
         errorMsg: string = '';
 
@@ -73,10 +67,9 @@
 
             this.isLoading = true;
 
-            Axios.post('/api/home/postmessage', {
+            Axios.post('/api/home/message', {
                 name: this.name,
                 email: this.email,
-                phone: this.phone,
                 content: this.content
             })
                 .then(response => {
@@ -105,19 +98,22 @@
                 this.nameErrorMsg = '请告诉我如何称呼您';
                 available = false;
             }
-            if (this.name.length > 100) {
-                this.nameErrorMsg = '请使用简短一些的昵称哦';
+            if (this.name.length > 200) {
+                this.nameErrorMsg = '请使用简短一些的昵称';
                 available = false;
             }
 
-            if (this.email.length > 200) {
-                this.emailErrorMsg = '您输入的邮箱地址似乎有误';
-                available = false;
-            }
-
-            if (this.phone.length > 25) {
-                this.phoneErrorMsg = '您输入的联系电话似乎有误';
-                available = false;
+            if (this.email.length > 0) {
+                if (this.email.length > 800) {
+                    this.emailErrorMsg = '您输入的邮箱地址过长，请换一个';
+                    available = false;
+                } else {
+                    var emailReg = /^[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
+                    if (!emailReg.test(this.email)) {
+                        this.emailErrorMsg = '请输入有效的邮箱';
+                        available = false;
+                    }
+                }
             }
 
             if (this.content.length === 0) {
@@ -151,11 +147,6 @@
         @Watch('email')
         onEmailChanged(): void {
             this.emailErrorMsg = '';
-        }
-
-        @Watch('phone')
-        onPhoneChanged(): void {
-            this.phoneErrorMsg = '';
         }
 
         @Watch('content')

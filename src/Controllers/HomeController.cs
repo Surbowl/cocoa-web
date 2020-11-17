@@ -34,9 +34,18 @@ namespace Cocoa.Web.Controllers
         /// <returns></returns>
         [HttpPost]
         [Route("api/[controller]/[action]")]
-        public async Task<JsonResult> PostMessage([FromBody] MessageModel message)
+        public JsonResult Message([FromBody] MessageModel message)
         {
-            _logger.LogInformation(message.ToString());
+            _logger.LogInformation($"You have received a message:\n{message}");
+
+            // process email here
+
+            //return Json(new
+            //{
+            //    Code = 200,
+            //    Message = "succeed",
+            //    Countdown = 20
+            //});
 
             return Json(new
             {
