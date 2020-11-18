@@ -32,7 +32,7 @@ My personal website, based on [aspnetcore-vue-typescript-template](https://githu
 
 ## Or build Docker Image
     docker build -t cocoa-web:5.0 .
-See [Dockerfile](https://github.com/Surbowl/cocoa-web/blob/5.0.0/src/Dockerfile) for more info.
+See [Dockerfile](https://github.com/Surbowl/cocoa-web/blob/master/src/Dockerfile) for more info.
 
 ## Npm available commands
 - `npm run dev` - Builds front end in development mode and watches for any changes made to the files.
