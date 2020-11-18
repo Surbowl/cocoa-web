@@ -53,8 +53,7 @@ namespace Cocoa.Web
 
                 app.UseHttpsRedirection();
             }
-
-            //if (env.EnvironmentName == "ProductionWithoutSsl")
+            //else if (env.EnvironmentName == "ProductionWithoutSsl")
             //{
 
             //}
