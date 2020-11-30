@@ -22,9 +22,24 @@ namespace Cocoa.Web.Controllers
         /// SPA entry point
         /// </summary>
         /// <returns></returns>
-        public IActionResult Index()
+        public IActionResult Index([FromQuery(Name = "lang")] string? language, [FromHeader(Name = "Accept-Language")] string? acceptLanguage)
         {
-            return View();
+            if (!string.IsNullOrWhiteSpace(language))
+            {
+                switch (language.Trim().ToLower())
+                {
+                    case "zh": return View("Zh");
+                    case "en": return View("En");
+                    default: break;
+                }
+            }
+
+            if (acceptLanguage?.Trim().StartsWith("zh", StringComparison.OrdinalIgnoreCase) ?? false)
+            {
+                return View("Zh");
+            }
+
+            return View("En");
         }
 
         /// <summary>

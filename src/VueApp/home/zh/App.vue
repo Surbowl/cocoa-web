@@ -1,7 +1,7 @@
 ﻿<template>
     <div>
         <!--Float Down Arrow-->
-        <div id="floatDownArrowDiv" class="has-text-centered is-size-5"><span class="icon-chevron-down" v-scroll-to="'#_aboutMe'"></span></div>
+        <div id="_floatDownArrowDiv" class="has-text-centered is-size-5"><span class="icon-chevron-down" v-scroll-to="'#_aboutMe'"></span></div>
 
         <!--NAVBAR-->
         <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation"
@@ -17,6 +17,18 @@
             </div>
             <div id="navbarBasicExample" class="navbar-menu"
                  :class="{'is-active' : navbarBurgersIsActive}">
+                <div class="navbar-start">
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-link">
+                            中文 Chinese
+                        </a>
+                        <div class="navbar-dropdown">
+                            <a class="navbar-item" href="/home?lang=en">
+                                English
+                            </a>
+                        </div>
+                    </div>
+                </div>
                 <div class="navbar-end" data-aos="fade-left" aos-once="true">
                     <a class="navbar-item has-underline" v-scroll-to="'#_aboutMe'">关于我</a>
                     <a class="navbar-item has-underline" v-scroll-to="'#_findMe'">社交</a>
@@ -97,7 +109,7 @@
             <div class="columns is-centered">
                 <div class="column is-three-fifths has-text-centered">
                     <div class="field" data-aos="fade-up" aos-once="true">
-                        <span class="is-size-3 has-shadow-yellow">Find&nbsp;Me</span><br /><br />
+                        <span class="is-size-3 has-shadow-yellow">各种社交&thinsp;APP</span><br /><br />
                     </div>
                     <div data-aos="fade-up" aos-once="true">
                         <social-buttons></social-buttons>
@@ -112,7 +124,7 @@
             <div class="columns is-centered">
                 <div class="column is-two-fifths has-text-centered">
                     <div class="field" data-aos="fade-up" aos-once="true">
-                        <span class="is-size-3 has-shadow-green">&nbsp;Say&nbsp;Hello</span><br /><br />
+                        <span class="is-size-3 has-shadow-green">来封邮件如何？</span><br /><br />
                     </div>
                     <div data-aos="fade-up" aos-once="true">
                         <message-board></message-board>
@@ -127,15 +139,15 @@
             <div class="content has-text-centered">
                 <p id="footerInfo">
                     <span>
-                        <span role="img" aria-label="emoji">🚀</span>&thinsp;Powered&nbsp;by&nbsp;{{runtimeInfo.framework}}&nbsp;on&nbsp;Docker
+                        <span role="img" aria-label="emoji">🚀</span>&thinsp;Powered by {{runtimeInfo.framework}} on Docker
                         <br />
                     </span>
                     <span v-show="showBackgroundImg">
-                        Photo&nbsp;by&nbsp;<a class="has-text-black" href="https://unsplash.com/powwpic" target="_blank"><u>Ines&nbsp;Álvarez&nbsp;Fdez</u></a>
+                        Photo by <a class="has-text-black" href="https://unsplash.com/powwpic" target="_blank"><u>Ines Álvarez Fdez</u></a>
                         <br />
                     </span>
                     <span>
-                        Source&nbsp;code&nbsp;on&nbsp;<a class="has-text-black" href="https://github.com/Surbowl/cocoa-web" target="_blank"><u>Github</u></a>
+                        Source code on <a class="has-text-black" href="https://github.com/Surbowl/cocoa-web" target="_blank"><u>Github</u></a>
                         <br />
                     </span>
                     <span>
@@ -152,11 +164,11 @@
     import { Vue, Component } from 'vue-property-decorator';
     import * as Aos from 'aos';
 
-    import SkillsBox from '@/home/components/SkillsBox.vue'
-    import MessageBoard from '@/home/components/MessageBoard.vue'
-    import SocialButtons from '@/home/components/SocialButtons.vue'
+    import SkillsBox from '@/home/zh/components/SkillsBox.vue'
+    import MessageBoard from '@/home/zh/components/MessageBoard.vue'
+    import SocialButtons from '@/home/zh/components/SocialButtons.vue'
 
-    import BgImg from '@/home/assets/bg.jpg';
+    import BgImg from '@/home/zh/assets/bg.jpg';
 
     @Component({
         name: 'App',
@@ -182,7 +194,6 @@
             window.addEventListener('scroll', this.onScroll);
         }
 
-        // methods
         onResize(): void {
             this.screenHeight = window.innerHeight;
             this.screenHeightHalf = window.innerHeight / 2;
@@ -201,7 +212,6 @@
             this.navbarBurgersIsActive = !this.navbarBurgersIsActive;
         }
 
-        // computed
         get overHalfScreen(): boolean {
             return this.currentHeight > this.screenHeightHalf
         }
@@ -213,7 +223,7 @@
 <style scoped lang="scss">
     @import '~aos/dist/aos.css';
 
-    #floatDownArrowDiv {
+    #_floatDownArrowDiv {
         width: 100%;
         position: absolute;
         bottom: 24px;
@@ -248,27 +258,32 @@
         transition: background-color .2s ease-in-out;
         background-color: transparent;
         background-image: none;
+        .navbar-item:hover
 
-        .navbar-item:hover {
-            background-color: transparent;
-        }
+    {
+        background-color: transparent;
+    }
 
-        /* prevent box-shadow from spilling navbar div*/
-        .button:hover {
-            box-shadow: 0 4px 6px 0 rgba(0,0,0,.1);
-        }
+    /* prevent box-shadow from spilling navbar div*/
+    .button:hover {
+        box-shadow: 0 4px 6px 0 rgba(0,0,0,.1);
+    }
+
     }
 
     $navbar-link-color: #4A4A4A;
 
     .navbar-link {
-        &:hover {
-            color: $navbar-link-color;
-        }
+        &:hover
 
-        &:not(.is-arrowless)::after {
-            border-color: $navbar-link-color;
-        }
+    {
+        color: $navbar-link-color;
+    }
+
+    &:not(.is-arrowless)::after {
+        border-color: $navbar-link-color;
+    }
+
     }
 
     .navbar-end {

@@ -15,13 +15,16 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 let isProduction = true;
 const applicationBasePath = './VueApp/';
 
-// We search for app.js or app.ts files inside VueApp/{miniSpaName} folder and make those as entries. Convention over configuration
+// We search for app.js or app.ts files inside VueApp/{miniSpaName}/{language} folder and make those as entries. Convention over configuration
 var appEntryFiles = {}
-fs.readdirSync(applicationBasePath).forEach(function (name) {
-    let spaEntryPoint = applicationBasePath + name + '/app.ts'
-    if (fs.existsSync(spaEntryPoint)) {
-        appEntryFiles[name] = spaEntryPoint
-    }
+fs.readdirSync(applicationBasePath).forEach(function (spaName) {
+    fs.readdirSync(applicationBasePath + spaName).forEach(function (lang) {
+        let name = spaName + '/' + lang;
+        let spaEntryPoint = applicationBasePath + name + '/app.ts'
+        if (fs.existsSync(spaEntryPoint)) {
+            appEntryFiles[name] = spaEntryPoint;
+        }
+    })
 })
 
 // Add main global.scss file with Bulma(or any other source by choice)

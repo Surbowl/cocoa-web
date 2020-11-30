@@ -2,7 +2,7 @@
     <div>
         <div class="has-text-left">
             <div class="field">
-                <input v-model="name" class="form-item" type="text" placeholder="Name *">
+                <input v-model="name" class="form-item" type="text" placeholder="昵称 *">
                 <p class="help has-text-danger" v-show="nameErrorMsg != ''">{{nameErrorMsg}}</p>
             </div>
             <div class="field">
@@ -10,7 +10,7 @@
                 <p class="help has-text-danger" v-show="emailErrorMsg != ''">{{emailErrorMsg}}</p>
             </div>
             <div class="field">
-                <textarea v-model="content" class="form-item" rows="8" placeholder="Message *"></textarea>
+                <textarea v-model="content" class="form-item" rows="8" placeholder="正文 *"></textarea>
                 <p class="help has-text-danger" v-show="contentErrorMsg != ''">{{contentErrorMsg}}</p>
             </div>
         </div>
@@ -22,8 +22,7 @@
             <button class="button is-primary is-rounded is-medium" :class="{'is-loading':isLoading}" @click="sendMessage"
                     v-show="remainingCountdown <= 0">
                 <span>
-                    发送&nbsp;
-                    <span role="img" aria-label="emoji">{{sended ? '📫':'📪'}}</span>
+                    发送&nbsp;<span role="img" aria-label="emoji">{{sended ? '📫':'📪'}}</span>
                 </span>
             </button>
             <button class="button is-static is-rounded is-medium"
@@ -70,7 +69,8 @@
             Axios.post('/api/home/message', {
                 name: this.name,
                 email: this.email,
-                content: this.content
+                content: this.content,
+                lang: 'zh'
             })
                 .then(response => {
                     this.isLoading = false;

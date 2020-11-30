@@ -7,5 +7,7 @@
         public string Email { get; init; } = string.Empty;
 
         public string Content { get; init; } = string.Empty;
+
+        public string Lang { get; set; } = string.Empty;
     }
 }
