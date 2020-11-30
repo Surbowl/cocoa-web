@@ -20,15 +20,15 @@
         <br />
         <div class="has-text-centered">
             <button class="button is-primary is-rounded is-medium" :class="{'is-loading':isLoading}" @click="sendMessage"
-                    v-show="remainingCountdown <= 0">
+                    v-show="countdown <= 0">
                 <span>
                     发送&nbsp;<span role="img" aria-label="emoji">{{sended ? '📫':'📪'}}</span>
                 </span>
             </button>
             <button class="button is-static is-rounded is-medium"
-                    v-show="remainingCountdown > 0">
+                    v-show="countdown > 0">
                 <span>
-                    &emsp;{{remainingCountdown}}&emsp;
+                    &emsp;{{countdown}}&emsp;
                 </span>
             </button>
         </div>
@@ -55,7 +55,7 @@
         isLoading: boolean = false;
         sended: boolean = false;
 
-        remainingCountdown: number = 0;
+        countdown: number = 0;
 
         sendMessage(): void {
             this.sended = false;
@@ -130,10 +130,10 @@
 
         // count down
         setCountDown(seconds: number): void {
-            this.remainingCountdown = seconds;
+            this.countdown = seconds;
             let timeStop = setInterval(() => {
-                this.remainingCountdown--;
-                if (this.remainingCountdown <= 0) {
+                this.countdown--;
+                if (this.countdown <= 0) {
                     clearInterval(timeStop);
                 }
             }, 1000);
