@@ -84,7 +84,7 @@
         <section id="_aboutMe" class="section">
             <div class="columns about-me-div">
                 <div class="column is-4 is-offset-1 has-text-centered-mobile has-text-left-tablet" data-aos="fade-up" aos-once="true">
-                    <div class="field"><span class="is-size-3 has-shadow-blue">My latest inf</span></div>
+                    <div class="field"><span class="is-size-3 has-shadow-blue">My latest info</span></div>
                     <span class="gap-top">
                         <span role="img" aria-label="emoji">💻</span>&nbsp;Back-End Engineer
                         <span role="img" aria-label="emoji">👨‍🎓</span>&nbsp;Bachelor of IoT Student<br />
