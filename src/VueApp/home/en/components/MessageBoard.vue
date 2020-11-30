@@ -104,7 +104,7 @@
             }
 
             if (this.email.length > 0) {
-                if (this.email.length > 800) {
+                if (this.email.length > 500) {
                     this.emailErrorMsg = 'Sorry, the email address you entered is too long';
                     available = false;
                 } else {

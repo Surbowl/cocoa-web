@@ -6,7 +6,7 @@
                 <p class="help has-text-danger" v-show="nameErrorMsg != ''">{{nameErrorMsg}}</p>
             </div>
             <div class="field">
-                <input v-model="email" class="form-item" type="email" placeholder="Email">
+                <input v-model="email" class="form-item" type="email" placeholder="电子邮箱">
                 <p class="help has-text-danger" v-show="emailErrorMsg != ''">{{emailErrorMsg}}</p>
             </div>
             <div class="field">
@@ -104,7 +104,7 @@
             }
 
             if (this.email.length > 0) {
-                if (this.email.length > 800) {
+                if (this.email.length > 500) {
                     this.emailErrorMsg = '您输入的邮箱地址过长，请换一个';
                     available = false;
                 } else {
