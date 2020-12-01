@@ -1,12 +1,15 @@
 ﻿@{
+    ViewData["Lang"] = "en";
     ViewData["Title"] = "Home";
+    ViewData["Description"] = "Welcome to my dom";
     ViewData["OgTitle"] = "Hi, I'm Jiewen";
-    ViewData["OgDescription"] = "Nice to see you !";
+    ViewData["OgDescription"] = "Welcome to my dom";
 }
 @section styles{
-<link rel="stylesheet" href="~/dist/css/home/en/main.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/dist/css/home/en/main.css" asp-append-version="true" />
 }
 @section scripts{
-<script>var _runtimeInfo={framework:"@System.Runtime.InteropServices.RuntimeInformation.FrameworkDescription"}</script><script src="~/dist/js/home/en/bundle.js" asp-append-version="true"></script>
+    <script>var _runtimeInfo={framework:"@System.Runtime.InteropServices.RuntimeInformation.FrameworkDescription"}</script>
+    <script src="~/dist/js/home/en/bundle.js" asp-append-version="true"></script>
 }
 <div id="app"></div>
