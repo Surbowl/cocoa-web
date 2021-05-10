@@ -16,7 +16,7 @@
                 </div>
                 <div class="field">
                     <div class="tags is-centered">
-                        <span class="tag is-float-text">ASP.NET Core</span><span class="tag is-float-text">Vue</span><span class="tag is-float-text">Element</span><span class="tag is-float-text">Bulma</span>
+                        <span class="tag is-float-text">ASP.NET Core/Framework</span><span class="tag is-float-text">Vue</span><span class="tag is-float-text">Element</span><span class="tag is-float-text">Bulma</span>
                     </div>
                 </div>
                 <div class="field gap-top">
