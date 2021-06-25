@@ -24,7 +24,6 @@
                 </div>
                 <div class="field">
                     <div class="tags is-centered">
-                        <span class="tag is-float-text">VS</span><span class="tag is-float-text">dnSpy</span><span class="tag is-float-text">Dev-C++</span><span class="tag is-float-text">HBuilder</span>
                         <span class="tag is-float-text">Docker</span><span class="tag is-float-text">Webpack</span><span class="tag is-float-text">gulp</span><span class="tag is-float-text">git</span>
                     </div>
                 </div>
