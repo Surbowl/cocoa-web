@@ -20,6 +20,14 @@
                     </div>
                 </div>
                 <div class="field gap-top">
+                    <span class="is-size-5">Database</span>
+                </div>
+                <div class="field">
+                    <div class="tags is-centered">
+                        <span class="tag is-float-text">MySQL</span><span class="tag is-float-text">SQL Server</span><span class="tag is-float-text">Redis</span><span class="tag is-float-text">InfluxDB</span><span class="tag is-float-text">AnalyticDB</span>
+                    </div>
+                </div>
+                <div class="field gap-top">
                     <span class="is-size-5">Tools</span>
                 </div>
                 <div class="field">
