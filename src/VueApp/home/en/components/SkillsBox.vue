@@ -12,7 +12,7 @@
                     </div>
                 </div>
                 <div class="field gap-top">
-                    <span class="is-size-5">Database</span>
+                    <span class="is-size-5">Databases</span>
                 </div>
                 <div class="field">
                     <div class="tags is-centered">
