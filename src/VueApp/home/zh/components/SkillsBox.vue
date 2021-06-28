@@ -12,19 +12,19 @@
                     </div>
                 </div>
                 <div class="field gap-top">
+                    <span class="is-size-5">Database</span>
+                </div>
+                <div class="field">
+                    <div class="tags is-centered">
+                        <span class="tag is-float-text">MySQL</span><span class="tag is-float-text">SQL Server</span><span class="tag is-float-text">Redis</span><span class="tag is-float-text">Elasticsearch</span><span class="tag is-float-text">InfluxDB</span><span class="tag is-float-text">AnalyticDB</span>
+                    </div>
+                </div>
+                <div class="field gap-top">
                     <span class="is-size-5">Frameworks</span>
                 </div>
                 <div class="field">
                     <div class="tags is-centered">
                         <span class="tag is-float-text">ASP.NET Core/Framework</span><span class="tag is-float-text">Vue</span><span class="tag is-float-text">Element</span><span class="tag is-float-text">Bulma</span>
-                    </div>
-                </div>
-                <div class="field gap-top">
-                    <span class="is-size-5">Database</span>
-                </div>
-                <div class="field">
-                    <div class="tags is-centered">
-                        <span class="tag is-float-text">MySQL</span><span class="tag is-float-text">SQL Server</span><span class="tag is-float-text">Redis</span><span class="tag is-float-text">InfluxDB</span><span class="tag is-float-text">AnalyticDB</span>
                     </div>
                 </div>
                 <div class="field gap-top">
