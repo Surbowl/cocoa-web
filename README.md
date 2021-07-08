@@ -1,5 +1,5 @@
 # Cocoa-web
-My personal website, based on [aspnetcore-vue-typescript-template](https://github.com/danijelh/aspnetcore-vue-typescript-template).
+My personal website, based on [aspnetcore-vue-typescript-template](https://github.com/danijelh/aspnetcore-vue-typescript-template) + [bulma](https://bulma.io).
 
 👉 [Demo](https://surbowl.online)
 
