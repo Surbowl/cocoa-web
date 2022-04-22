@@ -24,15 +24,7 @@
                 </div>
                 <div class="field">
                     <div class="tags is-centered">
-                        <span class="tag is-float-text">ASP.NET Core/Framework</span><span class="tag is-float-text">Vue</span><span class="tag is-float-text">Element</span><span class="tag is-float-text">Bulma</span>
-                    </div>
-                </div>
-                <div class="field gap-top">
-                    <span class="is-size-5">Tools</span>
-                </div>
-                <div class="field">
-                    <div class="tags is-centered">
-                        <span class="tag is-float-text">Docker</span><span class="tag is-float-text">Webpack</span><span class="tag is-float-text">gulp</span><span class="tag is-float-text">git</span>
+                        <span class="tag is-float-text">ASP.NET</span><span class="tag is-float-text">WPF</span><span class="tag is-float-text">Vue</span><span class="tag is-float-text">Element</span><span class="tag is-float-text">Bulma</span>
                     </div>
                 </div>
                 <span class="gap-top"></span>

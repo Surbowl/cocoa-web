@@ -87,7 +87,6 @@
                     <div class="field"><span class="is-size-3 has-shadow-blue">My latest info</span></div>
                     <span class="gap-top">
                         <span role="img" aria-label="emoji">💻</span>&nbsp;Back-End Engineer
-                        <span role="img" aria-label="emoji">👨‍🎓</span>&nbsp;Bachelor of IoT Student<br />
                         <span role="img" aria-label="emoji">📍</span>&nbsp;Living in Fujian Province, China<br />
                     </span>
                 </div>

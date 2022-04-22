@@ -13,7 +13,7 @@ My personal website, based on [aspnetcore-vue-typescript-template](https://githu
 </p>
 
 ## Features
-- .NET 5.0
+- .NET 6.0
 - Vue 2.6
 - TypeScript
 - Bulma
@@ -23,7 +23,7 @@ My personal website, based on [aspnetcore-vue-typescript-template](https://githu
 
 ## Build & Run locally
 #### Prerequisites
-- [.NET 5.0 SDK](https://dotnet.microsoft.com/download/dotnet-core)
+- [.NET 6.0 SDK](https://dotnet.microsoft.com/download/dotnet-core)
 - [Node.js](https://nodejs.org)
 #### Step 1: Install front-end packages
     npm install
@@ -31,7 +31,7 @@ My personal website, based on [aspnetcore-vue-typescript-template](https://githu
     dotnet run
 
 ## Or build Docker Image
-    docker build -t cocoa-web:5.0 .
+    docker build -t cocoa-web:6.0 .
 See [Dockerfile](https://github.com/Surbowl/cocoa-web/blob/master/src/Dockerfile) for more info.
 
 ## Npm available commands
