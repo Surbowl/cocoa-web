@@ -86,8 +86,11 @@
                 <div class="column is-4 is-offset-1 has-text-centered-mobile has-text-left-tablet" data-aos="fade-up" aos-once="true">
                     <div class="field"><span class="is-size-3 has-shadow-blue">&nbsp;关于我&nbsp;</span></div>
                     <span class="gap-top">
-                        <span role="img" aria-label="emoji">💻</span>&nbsp;.NET 服务端开发工程师
-                        <span role="img" aria-label="emoji">📍</span>&nbsp;目前在福建省福州市工作<br />
+                        <span role="img" aria-label="emoji">💻</span>&nbsp;.Net 后端工程师
+                        <br />
+                        <span role="img" aria-label="emoji">📍</span>&nbsp;在福建省生活工作
+                        <br />
+                        <span role="img" aria-label="emoji">❤️</span>&nbsp;热爱技术，拥抱开源
                     </span>
                 </div>
                 <!--AOS causing horizontal scroll bar to appear https://github.com/michalsnik/aos/issues/416 so add style="overflow-x:hidden;"-->

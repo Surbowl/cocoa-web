@@ -87,7 +87,10 @@
                     <div class="field"><span class="is-size-3 has-shadow-blue">My latest info</span></div>
                     <span class="gap-top">
                         <span role="img" aria-label="emoji">💻</span>&nbsp;Back-End Engineer
-                        <span role="img" aria-label="emoji">📍</span>&nbsp;Living in Fujian Province, China<br />
+                        <br />
+                        <span role="img" aria-label="emoji">📍</span>&nbsp;Living in Fujian Province, China
+                        <br />
+                        <span role="img" aria-label="emoji">❤️</span>&nbsp;Love open source
                     </span>
                 </div>
                 <!--AOS causing horizontal scroll bar to appear https://github.com/michalsnik/aos/issues/416 so add style="overflow-x:hidden;"-->
