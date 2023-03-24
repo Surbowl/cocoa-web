@@ -1,8 +1,6 @@
 # Cocoa-web
 My personal website, based on [aspnetcore-vue-typescript-template](https://github.com/danijelh/aspnetcore-vue-typescript-template) + [bulma](https://bulma.io).
 
-👉 [Demo](https://surbowl.online)
-
 <p style="text-align:center">
     <a href="./LICENSE">
       <img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat" />
